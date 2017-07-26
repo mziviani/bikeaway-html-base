@@ -1,0 +1,25 @@
+/* classi base */
+.border-red {
+  border-top: 3px solid #9d0029;
+}
+.border-yellow {
+  border-top: 5px solid #ffc752;
+}
+.background-yellow {
+  background-color: #ffe9ba;
+}
+.background-red {
+  background-color: #9d0029;
+}
+/* stili specifici*/
+body {
+  font-family: 'Roboto Slab', "Times New Roman", Times, serif;
+  font-size: 16px;
+}
+#intestazione > div {
+  margin-top: 14px;
+  margin-bottom: 10px;
+}
+#intestazione header a img {
+  max-width: 154px;
+}
