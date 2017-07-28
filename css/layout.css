@@ -1,3 +1,15 @@
+/*test*/
+@media screen and (max-width:767px) {
+  body {
+    background-color: red;
+  }
+}
+@media screen and (max-width:991px) {
+  body {
+    background-color: blue;
+  }
+}
+
 /* classi base */
 .border-red {
   border-top: 3px solid #9d0029;
@@ -11,24 +23,32 @@
 .background-red {
   background-color: #9d0029;
 }
+.ball-full {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background-color: red;
+}
 /* stili specifici*/
 body {
   font-family: 'Roboto Slab', "Times New Roman", Times, serif;
   font-size: 16px;
 }
-#intestazione + div {
+#intestazione div {
   margin-top: 14px;
   margin-bottom: 10px;
 }
 #intestazione header a img {
   max-width: 154px;
 }
-#search {
+#search-background {
   background-repeat: no-repeat;
   background-position: top center;
   background-image: url('../images/sfondo-search-home-test.jpg');
   background-size: cover;
   min-height: 419px;
+}
+#search {
   text-align: center;
 }
 #search #search-title {
@@ -39,10 +59,252 @@ body {
   font-size: 40px ;
   color: #fff;
   margin: 0px;
-  text-shadow: 3px 3px 3px #000;
+  text-shadow: 3px 3px 5px rgba(0,0,0,0.7);
 }
-#search #search-field span {
-  display: inline-block;
+#search #search-field {
+  height: 40px;
+  font-size: 0px;
+}
+#search #search-field form {
+  height: 100%;
+}
+#search #search-field #search-field-group {
+  position: relative;
   background-color: #fff;
+  height: 100%;
+  font-size: 16px;
+  display: inline-block;
+  margin: 0px 0px 0px 0px;
+  padding: 0px;
+}
+#search #search-field #search-field-group span {
+  margin: 9px 10px 11px 10px;
+  font-weight: bold;
+  font-size: 20px;
+  padding: 0px;
+}
+#search #search-field #search-field-group input[name="q"] {
+  border-width:  0px;
+  border-style: none;
+  outline-style: none;
+  outline-width: 0px;
+  padding: 0px;
+  margin: 0px;
+  height: 100%;
+  vertical-align: top;
 
+}
+#search #search-field input[type="submit"] {
+  height: 40px;
+  font-size: 16px;
+  border: 0px none;
+  background-color: #ffc752;
+  display: inline-block;
+  margin: 0px;
+  padding: 0px 10px 0px 10px;
+  vertical-align: top;
+}
+#search #search-field input[type="submit"]:hover,
+#search #search-field input[type="submit"]:focus {
+  background-color: #9d0029;
+  color: #ffc752;
+}
+#search #search-field #search-advanced-view {
+  height: 100%;
+  position: relative;
+  display: inline-block;
+  font-size: 20px;
+  margin:0px;
+  padding: 0px;
+  vertical-align: top;
+}
+#search #search-field #search-advanced-view a {
+  color: #fff;
+  display: inline-block;
+  height: 100%;
+  background-color: #9d0029;
+  padding: 8px 11px 0px 9px;
+}
+/* opzioni suggerimenti, ultime ricerche e ricerca avanzata */
+#search #search-field #search-field-group #tips {
+  background-color: #fff;
+  width: 100%;
+  min-height: 100px;
+  position: absolute;
+  top: 40px;
+  left: 0px;
+  text-align: left;
+  font-size: 14px;
+  z-index: 9;
+}
+#search #search-field #search-field-group h6 {
+  color: #9d0029;
+  font-size: 13px;
+  margin: 10px 0px 10px 10px;
+  padding: 0px;
+}
+#search #search-field #search-field-group ul {
+  margin: 0px 0px 0px 0px;
+  padding: 0px;
+}
+#search #search-field #search-field-group ul li {
+  list-style-type: none;
+}
+#search #search-field #search-field-group ul li a {
+  display: block;
+  padding: 5px 5px 5px 10px;
+  color: #333;
+  text-decoration: none;
+}
+#search #search-field #search-field-group ul li a:hover,
+#search #search-field #search-field-group ul li a:focus
+ {
+  background-color: #ffe9ba;
+  outline-width: 0px;
+  outline-style: none;
+}
+#search #search-field #search-advanced-view #search-advanced-options {
+  position: absolute;
+  top: 40px;
+  right: 0px;
+  min-height: 100px;
+  width: 605px;
+  padding: 8px 0px 8px 0px;
+  margin: 0px;
+  font-size: 13px;
+  color: #fff;
+  text-align: left;
+  line-height: 24px;
+  z-index: 0;
+}
+#search #search-field #search-advanced-view #search-advanced-options div h6 {
+  margin: 0px 0px 8px 0px;
+  padding: 0px;
+  color: #ffc752;
+  font-size: 13px;
+}
+
+#search #search-field #search-advanced-view #search-advanced-options div input[type='checkbox'] {
+  width: 15px;
+  height: 15px;
+  background-color: #fff;
+  color: green;
+  border: 0px none;
+  margin-right: 5px;
+  appearance:button;
+  -webkit-appearance:button;
+  -moz-appearance:button;
+  -ms-appearance:button;
+  vertical-align: text-bottom;
+}
+#search #search-field #search-advanced-view #search-advanced-options div input[type='checkbox']:checked {
+  background-image: url('../images/checked.svg');
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+#search #search-field #search-advanced-view #search-advanced-options div:nth-child(1) label {
+  width: 65%;
+  display: inline-block;
+}
+#search #search-field #search-advanced-view #search-advanced-options div:nth-child(1) input[type='text'],
+#search #search-field #search-advanced-view #search-advanced-options div:nth-child(1) select {
+  width: 35%;
+  height: 20px;
+  color: #000;
+  padding-left: 3px;
+  padding-right: 3px;
+  text-align: right;
+}
+#search #search-field #search-advanced-view #search-advanced-options div:nth-child(2) {
+  padding-top: 29px;
+}
+#evidenza header h2 {
+  margin: 16px 0px 16px 0px;
+  text-align: left;
+  color: #9d0029;
+  font-size: 30px;
+}
+/* STILI DEI PERCORSI SHORT */
+.percorso {
+  min-height: 210px;
+  margin-bottom: 16px;
+  font-size: 16px;
+}
+.percorso h3 {
+  padding: 0px;
+  margin: 0px;
+  font-weight: normal;
+  font-size: 19px;
+  line-height: 22px;
+
+}
+.percorso h3 a {
+  color: #fff;
+  display: block;
+  height: 51px;
+  width: 100%;
+  padding: 3px 0px 0px 5px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.percorso h3 a:hover {
+  text-decoration: none;
+}
+.percorso section {
+  padding: 8px 1px 5px 5px;
+}
+.percorso:hover:not(.highlight) section,
+.percorso:focus:not(.highlight) section {
+  background-color: #ffe9ba;
+  outline-width: 0px;
+  outline-style: none;
+}
+.percorso:hover:not(.highlight) h3 a,
+.percorso:focus:not(.highlight) h3 a {
+  background-color: #9d0029;
+}
+.percorso.highlight:hover section,
+.percorso.highlight:focus section {
+  background-color: #fff1d4;
+}
+.percorso .row.dettagli {
+  margin-top: 32px;
+  font-size: 15px;
+}
+.percorso .row.dettagli div {
+  margin:0px 0px 3px 0px;
+}
+.percorso .row .partenza {
+  padding-top: 3px;
+}
+.percorso .row .lunghezza {
+  text-align: right;
+}
+.percorso .row .lunghezza div {
+  background-color: #ffc752;
+  display: inline-block;
+  width: 100%;
+  padding-right: 5px;
+}
+.percorso .row.dettagli div:nth-child(1) span{
+  display: inline-block;
+  border: 1px solid #ffc752;
+  border-radius: 50%;
+  width: 12px;
+  height: 12px;
+  margin-left: 2px;
+}
+.percorso .row.dettagli div:nth-child(1) span.full {
+  background-color: #ffc752;
+}
+.percorso p {
+  font-size: 13px;
+  margin: 16px 0px 0px 0px;
+}
+.percorso p span {
+  margin-right: 5px;
+  color:#9d0029;
+}
+.percorso.highlight h3 a {
+  background-color: #9d0029;
 }
