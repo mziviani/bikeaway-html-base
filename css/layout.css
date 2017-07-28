@@ -1,14 +1,15 @@
 /*test*/
-@media screen and (max-width:767px) {
-  body {
-    background-color: red;
-  }
-}
 @media screen and (max-width:991px) {
   body {
     background-color: blue;
   }
 }
+@media screen and (max-width:767px) {
+  body {
+    background-color: red;
+  }
+}
+
 
 /* classi base */
 .border-red {
@@ -29,7 +30,7 @@
   height: 10px;
   background-color: red;
 }
-/* stili specifici*/
+/* stili specifici home*/
 body {
   font-family: 'Roboto Slab', "Times New Roman", Times, serif;
   font-size: 16px;
@@ -43,8 +44,8 @@ body {
 }
 #search-background {
   background-repeat: no-repeat;
-  background-position: top center;
-  background-image: url('../images/sfondo-search-home-test.jpg');
+  background-position: top left;
+  background-image: url('../images/sfondo-search-home.jpg');
   background-size: cover;
   min-height: 419px;
 }
@@ -106,8 +107,7 @@ body {
 }
 #search #search-field input[type="submit"]:hover,
 #search #search-field input[type="submit"]:focus {
-  background-color: #9d0029;
-  color: #ffc752;
+  background-color: #ffe9ba;
 }
 #search #search-field #search-advanced-view {
   height: 100%;
@@ -218,11 +218,77 @@ body {
 #search #search-field #search-advanced-view #search-advanced-options div:nth-child(2) {
   padding-top: 29px;
 }
-#evidenza header h2 {
+#evidenza header h2,
+#percorsi header h2 {
   margin: 16px 0px 16px 0px;
   text-align: left;
   color: #9d0029;
   font-size: 30px;
+}
+/* stili percorsi home*/
+#percorsi article.row {
+display: -webkit-box;
+ display: -webkit-flex;
+ display: -ms-flexbox;
+ display: flex;
+ flex-wrap: wrap;
+}
+
+#percorsi article.row > div {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 16px;
+}
+#percorsi article.row > div header {
+  position: relative;
+  height: 100%;
+  margin-bottom: 5px;
+  background-repeat: no-repeat;
+  background-position: top left;
+  background-image: url('../images/family.jpg');
+  background-size: cover;
+}
+#percorsi article.row > div header a {
+  position: absolute;
+  width: 100%;
+  height: auto;
+  bottom: 0px;
+  color: #000;
+  left: 0px;
+}
+#percorsi article.row > div header a:hover {
+  text-decoration: none;
+}
+#percorsi article.row > div header a h3 {
+  background-color: rgba(0,0,0,0.75);
+  color: #fff;
+  font-weight: bold;
+  font-size: 22px;
+  min-height: 51px;
+  padding: 3px 0px 0px 5px;
+  margin: 0px;
+}
+#percorsi article.row > div header a div {
+  min-height: 29px;
+  background-color: #ffc752;
+  font-size: 15px;
+  padding: 3px 0px 0px 5px;
+  font-weight: normal;
+  background-image: url('../images/freccia-dx.svg');
+  background-repeat: no-repeat;
+  background-size: 15px 15px;
+  background-position: 98% center;
+  padding-right: 15px;
+}
+#percorsi article.row > div header a:hover div,
+#percorsi article.row > div:focus header a div {
+  background-color: #fff1d4;
+}
+
+/* pubblicità */
+#adv div p {
+  min-height: 200px;
+  background-color: #ccc;
 }
 /* STILI DEI PERCORSI SHORT */
 .percorso {
@@ -230,41 +296,54 @@ body {
   margin-bottom: 16px;
   font-size: 16px;
 }
-.percorso h3 {
+.percorso a, .percorso a:hover {
+  color: #000;
+  text-decoration: none;
+  outline-width: 0px;
+  outline-style: none;
+}
+.percorso h3,
+.percorso h4 {
   padding: 0px;
   margin: 0px;
   font-weight: normal;
   font-size: 19px;
   line-height: 22px;
-
-}
-.percorso h3 a {
-  color: #fff;
-  display: block;
-  height: 51px;
+  color: #9d0029;
   width: 100%;
-  padding: 3px 0px 0px 5px;
+  height: 51px;
   text-overflow: ellipsis;
   overflow: hidden;
+  padding: 3px 0px 0px 5px;
 }
-.percorso h3 a:hover {
+
+.percorso.highlight h3 {
+  background-color: #9d0029;
+  color: #fff;
+}
+.percorso h3 a:hover,
+.percorso h4 a:hover {
   text-decoration: none;
 }
 .percorso section {
-  padding: 8px 1px 5px 5px;
+  padding: 8px 0px 5px 5px;
 }
-.percorso:hover:not(.highlight) section,
-.percorso:focus:not(.highlight) section {
+.percorso:not(.highlight) a:hover section,
+.percorso:focus:not(.highlight) a section
+ {
   background-color: #ffe9ba;
   outline-width: 0px;
   outline-style: none;
 }
-.percorso:hover:not(.highlight) h3 a,
-.percorso:focus:not(.highlight) h3 a {
+.percorso:not(.highlight) a:hover h3,
+.percorso:focus:not(.highlight) a h3,
+.percorso a:hover h4,
+.percorso:focus a h4 {
   background-color: #9d0029;
+  color: #fff;
 }
-.percorso.highlight:hover section,
-.percorso.highlight:focus section {
+.percorso.highlight a:hover section,
+.percorso.highlight:focus a section {
   background-color: #fff1d4;
 }
 .percorso .row.dettagli {
@@ -273,9 +352,6 @@ body {
 }
 .percorso .row.dettagli div {
   margin:0px 0px 3px 0px;
-}
-.percorso .row .partenza {
-  padding-top: 3px;
 }
 .percorso .row .lunghezza {
   text-align: right;
@@ -304,7 +380,4 @@ body {
 .percorso p span {
   margin-right: 5px;
   color:#9d0029;
-}
-.percorso.highlight h3 a {
-  background-color: #9d0029;
 }
