@@ -16,10 +16,33 @@ body {
   font-family: 'Roboto Slab', "Times New Roman", Times, serif;
   font-size: 16px;
 }
-#intestazione > div {
+#intestazione + div {
   margin-top: 14px;
   margin-bottom: 10px;
 }
 #intestazione header a img {
   max-width: 154px;
+}
+#search {
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-image: url('../images/sfondo-search-home-test.jpg');
+  background-size: cover;
+  min-height: 419px;
+  text-align: center;
+}
+#search #search-title {
+  margin-top: 100px;
+  margin-bottom: 30px;
+}
+#search #search-title h1 {
+  font-size: 40px ;
+  color: #fff;
+  margin: 0px;
+  text-shadow: 3px 3px 3px #000;
+}
+#search #search-field span {
+  display: inline-block;
+  background-color: #fff;
+
 }
