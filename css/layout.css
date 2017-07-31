@@ -290,6 +290,80 @@ display: -webkit-box;
   min-height: 200px;
   background-color: #ccc;
 }
+
+/* foto */
+#piede div.row {
+  margin-top: 16px;
+}
+#piede div.row section:last-child h4 {
+  margin: 0px;
+  padding: 0px;
+}
+#piede div.row section:last-child h4 img {
+  max-width: 154px;
+}
+#piede div.row section:last-child h5 {
+  margin: 0px;
+  padding: 0px;
+  color: #fff;
+}
+#piede div.row section:last-child #social {
+  margin-top: 16px;
+}
+#piede div.row section #social + ul li {
+  display: inline;
+}
+#piede div.row section:last-child #social + ul li a img {
+  max-width: 24px;
+}
+#piede div.row section h4 {
+  color: #ffc752;
+  margin: 2px 0px 0px 0px;
+  padding: 0px;
+  font-size: 20px;
+}
+#piede div.row section ul {
+  padding: 0px;
+  margin: 0px;
+}
+#piede div.row section ul li {
+  list-style-type: none;
+}
+#piede div.row section ul li a {
+  color: #fff;
+  font-size: 13px;
+}
+#piede div.row section p {
+  color: #fff;
+  font-size: 13px;
+  margin: 16px 0px 8px 0px;
+  padding: 0px;
+}
+#piede div.row section input[type='text'] {
+ text-align: center;
+ height: 30px;
+ padding: 0px 0px 0px 0px;
+ font-size: 15px;
+ border-width: 0px;
+ border-style: none;
+}
+#piede div.row section button {
+ background-color: #ffc752;
+ border-width: 0px;
+ border-style: none;
+ height: 30px;
+ padding: 0px 10px 0px 10px;
+}
+#piede div.row section button:hover {
+  background-color: #ffe9ba;
+}
+#piede footer div p {
+  color: #fff;
+  font-size: 13px;
+  text-align: center;
+  margin-top: 16px;
+}
+
 /* STILI DEI PERCORSI SHORT */
 .percorso {
   min-height: 210px;
