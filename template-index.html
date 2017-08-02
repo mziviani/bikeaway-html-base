@@ -8,6 +8,7 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:100,300,700" rel="stylesheet">
     <link rel="stylesheet" media="screen" href="css/bootstrap.min.css" />
     <link rel="stylesheet" media="screen" href="css/layout.css" />
+    <link rel="stylesheet" media="screen" href="css/layout-mobile.css" />
   </head>
 
   <body>
@@ -30,11 +31,11 @@
             </div>
             <div class="col-sm-12" id="search-field">
               <form method="get" action="/search">
-                <div id="search-field-group">
+               <div id="search-field-group">
                   <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
                   <input name="q" type="text" autocomplete="off" placeholder="Inserisci una parola o location" size="40" pattern=".{3,}" tabindex="1"  required />
                   <!-- suggerimenti -->
-               <!--<div id="tips" class="border-red">
+                  <!--<div id="tips" class="border-red">
                     <h6>Suggerimenti</h6>
                     <ul>
                       <li><a href="a" tabindex="2">suggerimento 1</a></li>
@@ -44,11 +45,11 @@
                   </div>-->
 
                 </div>
-                <input type="submit" value="cerca percorso" tabindex="16"/>
+                <input type="submit" value="cerca percorso" tabindex="16">
                 <div id="search-advanced-view">
-                    <a href="#" tabindex="5"><span class="glyphicon glyphicon-option-horizontal" aria-hidden="true"></span></a>
-                    <!-- ricerca avanzata opzioni *larghezza da calcolare in javascript*-->
-                <!--<div id="search-advanced-options" class="row background-red">
+                  <a href="#" tabindex="5"><span class="glyphicon glyphicon-option-horizontal" aria-hidden="true"></span></a>
+                 <!-- ricerca avanzata opzioni *larghezza da calcolare in javascript*-->
+                    <!--<div id="search-advanced-options" class="row background-red">
                         <div class="col-sm-4">
                           <h6>Caratteristiche</h6>
                           <label for="lung">lunghezza max.</label><input type="text" name="lung" id="lung" tabindex="6" placeholder="Km" pattern="[0-9]+{0,3}" maxlength="3"/><br/>
@@ -67,11 +68,11 @@
                                                                     <option value="3">***</option>
                                                                   </select><br/>
                         </div>
-                        <div class="col-sm-4">
+                        <div class="col-sm-4 col-xs-6 col-xs-push-6">
                           <label><input type="checkbox" name="bambini" value="1" tabindex="10" />vicino a me</label><br />
                           <label><input type="checkbox" name="vicino" value="1" tabindex="11"  />adatto ai bambini</label><br/>
                         </div>
-                        <div class="col-sm-4">
+                        <div class="col-sm-4 col-xs-6 col-xs-pull-6">
                           <h6>Categorie</h6>
                           <label><input type="checkbox" name="cat" value="family-slug" tabindex="12" /> family</label><br />
                           <label><input type="checkbox" name="cat" value="sports-slug" tabindex="13"  /> sports</label><br/>
@@ -80,7 +81,7 @@
                         </div>
                     </div>-->
                     <!-- fine search -->
-                </div>
+                  </div>
               </form>
             </div>
           </div>
@@ -97,7 +98,7 @@
                 <h3>La magia di Valeggio sul mincio</h3>
                   <section>
                     <div class="row">
-                      <div class="partenza col-md-9"><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span> Valeggio sul Mincio (VR)</div>
+                      <div class="col-md-9"><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span> Valeggio sul Mincio (VR)</div>
                       <div class="lunghezza col-md-3"><div>20 Km</div></div>
                     </div>
                       <div class="row dettagli">
@@ -116,7 +117,7 @@
                 <h3>La magia di Valeggio sul mincio</h3>
                   <section>
                     <div class="row">
-                      <div class="partenza col-md-9"><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span> Valeggio sul Mincio (VR)</div>
+                      <div class="col-md-9"><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span> Valeggio sul Mincio (VR)</div>
                       <div class="lunghezza col-md-3"><div>20 Km</div></div>
                     </div>
                       <div class="row dettagli">
@@ -135,7 +136,7 @@
                 <h3>La magia di Valeggio sul mincio</h3>
                   <section>
                     <div class="row">
-                      <div class="partenza col-md-9"><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span> Valeggio sul Mincio (VR)</div>
+                      <div class="col-md-9"><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span> Valeggio sul Mincio (VR)</div>
                       <div class="lunghezza col-md-3"><div>20 Km</div></div>
                     </div>
                       <div class="row dettagli">
@@ -160,9 +161,9 @@
         </div>
         <article class="row">
             <div class="col-sm-4" tabindex="19">
-              <header>
-                <a href="#">
-                  <h3>family</h3>
+             <header>
+               <a href="#">
+                 <h3>family</h3>
                   <div><strong>vedi tutti</strong> i percorsi <strong>family</strong></div>
                 </a>
               </header>
@@ -172,7 +173,7 @@
                 <h4>La magia di Valeggio sul mincio</h4>
                   <section>
                     <div class="row">
-                      <div class="partenza col-md-9"><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span> Valeggio sul Mincio (VR)</div>
+                      <div class="col-md-9"><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span> Valeggio sul Mincio (VR)</div>
                       <div class="lunghezza col-md-3"><div>20 Km</div></div>
                     </div>
                       <div class="row dettagli">
@@ -191,7 +192,7 @@
                 <h4>La magia di Valeggio sul mincio</h4>
                   <section>
                     <div class="row">
-                      <div class="partenza col-md-9"><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span> Valeggio sul Mincio (VR)</div>
+                      <div class="col-md-9"><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span> Valeggio sul Mincio (VR)</div>
                       <div class="lunghezza col-md-3"><div>20 Km</div></div>
                     </div>
                       <div class="row dettagli">
@@ -221,8 +222,8 @@
                 <h4>La magia di Valeggio sul mincio</h4>
                   <section>
                     <div class="row">
-                      <div class="partenza col-md-9"><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span> Valeggio sul Mincio (VR)</div>
-                      <div class="lunghezza col-md-3"><div>20 Km</div></div>
+                      <div class="col-md-9"><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span> Valeggio sul Mincio (VR)</div>
+                      <div class="lunghezza col-md-3"><div> 20 Km</div></div>
                     </div>
                       <div class="row dettagli">
                         <div class="col-md-6">Difficoltà <span class="full"></span><span></span><span></span></div>
@@ -240,7 +241,7 @@
                 <h4>La magia di Valeggio sul mincio</h4>
                   <section>
                     <div class="row">
-                      <div class="partenza col-md-9"><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span> Valeggio sul Mincio (VR)</div>
+                      <div class="col-md-9"><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span> Valeggio sul Mincio (VR)</div>
                       <div class="lunghezza col-md-3"><div>20 Km</div></div>
                     </div>
                       <div class="row dettagli">
@@ -270,7 +271,7 @@
                 <h4>La magia di Valeggio sul mincio</h4>
                   <section>
                     <div class="row">
-                      <div class="partenza col-md-9"><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span> Valeggio sul Mincio (VR)</div>
+                      <div class="col-md-9"><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span> Valeggio sul Mincio (VR)</div>
                       <div class="lunghezza col-md-3"><div>20 Km</div></div>
                     </div>
                       <div class="row dettagli">
@@ -289,7 +290,7 @@
                 <h4>La magia di Valeggio sul mincio</h4>
                   <section>
                     <div class="row">
-                      <div class="partenza col-md-9"><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span> Valeggio sul Mincio (VR)</div>
+                      <div class="col-md-9"><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span> Valeggio sul Mincio (VR)</div>
                       <div class="lunghezza col-md-3"><div>20 Km</div></div>
                     </div>
                       <div class="row dettagli">
@@ -319,7 +320,7 @@
                 <h4>La magia di Valeggio sul mincio</h4>
                   <section>
                     <div class="row">
-                      <div class="partenza col-md-9"><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span> Valeggio sul Mincio (VR)</div>
+                      <div class="col-md-9"><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span> Valeggio sul Mincio (VR)</div>
                       <div class="lunghezza col-md-3"><div>20 Km</div></div>
                     </div>
                       <div class="row dettagli">
@@ -338,7 +339,7 @@
                 <h4>La magia di Valeggio sul mincio</h4>
                   <section>
                     <div class="row">
-                      <div class="partenza col-md-9"><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span> Valeggio sul Mincio (VR)</div>
+                      <div class="col-md-9"><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span> Valeggio sul Mincio (VR)</div>
                       <div class="lunghezza col-md-3"><div>20 Km</div></div>
                     </div>
                       <div class="row dettagli">
@@ -387,7 +388,7 @@
             <section class="col-sm-4 col-sm-push-4">
               <h4>Iscriviti alla newsletter</h4>
               <p>Iscrivendoti riceverai gratuitamente la nostra newsletter mensile che ti terrà aggiornato sulle novità del sito, delle mappe e speciali promozioni per gli iscritti.</p>
-              <input id="newsletter" name="newsletter" type="text" autocomplete="off" size="20" pattern="\d{1,2}" placeholder="esempio@mail.it"/>
+              <input id="newsletter" name="newsletter" type="email" autocomplete="off" size="20" pattern="\d{1,2}" placeholder="esempio@mail.it"/>
               <button type="button">Iscriviti</button>
             </section>
 
@@ -416,6 +417,8 @@
                   <h5 id="social">Seguici sui social</h5>
                   <ul>
                     <li><a href="#"><img src="images/facebook-logo.svg" alt="logo facebook" /></a></li>
+                    <li><a href="#"><img src="images/facebook-logo.svg" alt="logo facebook" /></a></li>
+
                   </ul>
                 </section>
             </div>

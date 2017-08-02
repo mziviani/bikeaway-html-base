@@ -1,16 +1,3 @@
-/*test*/
-@media screen and (max-width:991px) {
-  body {
-    background-color: blue;
-  }
-}
-@media screen and (max-width:767px) {
-  body {
-    background-color: red;
-  }
-}
-
-
 /* classi base */
 .border-red {
   border-top: 3px solid #9d0029;
@@ -104,6 +91,7 @@ body {
   margin: 0px;
   padding: 0px 10px 0px 10px;
   vertical-align: top;
+  border-radius: 0px;
 }
 #search #search-field input[type="submit"]:hover,
 #search #search-field input[type="submit"]:focus {
@@ -188,14 +176,14 @@ body {
   width: 15px;
   height: 15px;
   background-color: #fff;
-  color: green;
   border: 0px none;
   margin-right: 5px;
   appearance:button;
   -webkit-appearance:button;
   -moz-appearance:button;
   -ms-appearance:button;
-  vertical-align: text-bottom;
+  vertical-align: middle;
+  border-radius: 0px;
 }
 #search #search-field #search-advanced-view #search-advanced-options div input[type='checkbox']:checked {
   background-image: url('../images/checked.svg');
@@ -213,7 +201,12 @@ body {
   color: #000;
   padding-left: 3px;
   padding-right: 3px;
+  padding-top: 0px;
+  padding-bottom: 0px;
   text-align: right;
+  border-radius: 0px;
+  border-style: none;
+  border-width: 0px;
 }
 #search #search-field #search-advanced-view #search-advanced-options div:nth-child(2) {
   padding-top: 29px;
@@ -227,34 +220,53 @@ body {
 }
 /* stili percorsi home*/
 #percorsi article.row {
-display: -webkit-box;
- display: -webkit-flex;
- display: -ms-flexbox;
- display: flex;
- flex-wrap: wrap;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  align-items: stretch;
+  -webkit-align-items: stretch;
+  display: flex;
+  flex-wrap: nowrap;
 }
 
-#percorsi article.row > div {
-  display: flex;
-  flex-direction: column;
+#percorsi article.row > div,
+#percorsi article.row > article {
   margin-bottom: 16px;
+  height: auto;
+}
+#percorsi article.row > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: -moz-flex;
+  align-items: stretch;
+  -webkit-align-items: stretch;
+  -moz-align-items: stretch;
+  display: flex;
+  flex-wrap: nowrap;
 }
 #percorsi article.row > div header {
-  position: relative;
-  height: 100%;
+  height: auto;
+  width: 100%;
   margin-bottom: 5px;
   background-repeat: no-repeat;
   background-position: top left;
   background-image: url('../images/family.jpg');
   background-size: cover;
+
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: -moz-flex;
+  align-items: flex-end;
+  -webkit-align-items: flex-end;
+  -moz-align-items: flex-end;
+  display: flex;
+  flex-wrap: nowrap;
 }
 #percorsi article.row > div header a {
-  position: absolute;
   width: 100%;
-  height: auto;
-  bottom: 0px;
   color: #000;
-  left: 0px;
 }
 #percorsi article.row > div header a:hover {
   text-decoration: none;
@@ -291,7 +303,7 @@ display: -webkit-box;
   background-color: #ccc;
 }
 
-/* foto */
+/* piede */
 #piede div.row {
   margin-top: 16px;
 }
@@ -309,12 +321,14 @@ display: -webkit-box;
 }
 #piede div.row section:last-child #social {
   margin-top: 16px;
+  margin-bottom: 8px;
 }
 #piede div.row section #social + ul li {
   display: inline;
 }
 #piede div.row section:last-child #social + ul li a img {
   max-width: 24px;
+  margin-right: 3px;
 }
 #piede div.row section h4 {
   color: #ffc752;
@@ -339,13 +353,15 @@ display: -webkit-box;
   margin: 16px 0px 8px 0px;
   padding: 0px;
 }
-#piede div.row section input[type='text'] {
+#piede div.row section input[type='text'],
+#piede div.row section input[type='email'] {
  text-align: center;
  height: 30px;
  padding: 0px 0px 0px 0px;
  font-size: 15px;
  border-width: 0px;
  border-style: none;
+ border-radius: 0px;
 }
 #piede div.row section button {
  background-color: #ffc752;
@@ -382,7 +398,7 @@ display: -webkit-box;
   margin: 0px;
   font-weight: normal;
   font-size: 19px;
-  line-height: 22px;
+  line-height: 24px;
   color: #9d0029;
   width: 100%;
   height: 51px;
