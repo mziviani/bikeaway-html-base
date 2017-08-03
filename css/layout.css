@@ -172,7 +172,9 @@ body {
   font-size: 13px;
 }
 
-#search #search-field #search-advanced-view #search-advanced-options div input[type='checkbox'] {
+#search #search-field #search-advanced-view #search-advanced-options div input[type='checkbox'],
+#search-category input[type='checkbox']
+ {
   width: 15px;
   height: 15px;
   background-color: #fff;
@@ -185,7 +187,8 @@ body {
   vertical-align: middle;
   border-radius: 0px;
 }
-#search #search-field #search-advanced-view #search-advanced-options div input[type='checkbox']:checked {
+#search #search-field #search-advanced-view #search-advanced-options div input[type='checkbox']:checked,
+#search-category input[type='checkbox']:checked  {
   background-image: url('../images/checked.svg');
   background-position: center center;
   background-repeat: no-repeat;
@@ -379,6 +382,63 @@ body {
   text-align: center;
   margin-top: 16px;
 }
+/************ stili category e search ************************/
+#search-category div nav {
+  margin: 16px 0px 16px 0px;
+}
+#search-category div nav ul {
+  margin: 0px 0px 0px 0px;
+  padding: 0px 0px 0px 0px;
+}
+#search-category div nav ul li {
+  display: inline;
+  list-style-type: none;
+  font-size: 15px;
+}
+#search-category div nav ul li span {
+  font-size: 10px;
+}
+#search-category div nav ul li a {
+  color: #000;
+}
+#search-category div nav ul li a:hover {
+  color: #9d0029;
+  text-decoration: none;
+}
+#search-category header h2 {
+  margin: 0px 0px 16px 0px;
+  text-align: left;
+  color: #000;
+  font-size: 30px;
+  font-weight: normal;
+}
+#search-category header h2 strong {
+  color: #9d0029;
+  font-weight: bold;
+}
+#search-category #order,
+#search-category #filter,
+#search-category #cat {
+  color: #fff;
+  font-size: 15px;
+  line-height: 24px;
+  padding: 16px 16px 16px 16px;
+  margin-bottom: 16px;
+}
+#search-category h4  {
+  margin:0px 0px 16px 0px;
+  font-size: 15px;
+  color: #ffc752;
+}
+#search-category input[type='text'],
+#search-category select {
+  width: 100%;
+  text-align: right;
+  color: #000;
+  margin-bottom: 8px;
+  padding: 0px;
+}
+/*checkbox riga 176 */
 
 /* STILI DEI PERCORSI SHORT */
 .percorso {

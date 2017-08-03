@@ -9,7 +9,8 @@
     margin-bottom: 3px;
   }
 
-  #search #search-field #search-advanced-view #search-advanced-options div input[type='checkbox'] {
+  #search #search-field #search-advanced-view #search-advanced-options div input[type='checkbox'],
+  #search-category input[type='checkbox'] {
     width: 20px;
     height: 20px;
   }
@@ -134,7 +135,8 @@
     width: 30%;
     height: 30px;
   }
-  #search #search-field #search-advanced-view #search-advanced-options div input[type='checkbox'] {
+  #search #search-field #search-advanced-view #search-advanced-options div input[type='checkbox'],
+  #search-category input[type='checkbox'] {
     width: 25px;
     height: 25px;
   }
