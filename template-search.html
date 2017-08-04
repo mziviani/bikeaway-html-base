@@ -42,7 +42,7 @@
             </ul>
           </nav>
           <header class="col-sm-12">
-            <h2>percorsi <strong>Family</strong></h2>
+            <h2>cerca <strong>"Verona Centro"</strong></h2>
           </header>
         </div>
         <section class="row">
@@ -107,13 +107,12 @@
             </section>
 
             <!--categorie -->
-            <section id="cat" class="background-red">
-              <h4>Categorie</h4>
-              <label><input type="checkbox" name="slug-cat" value="1" tabindex="10" />Family</label><br />
-              <label><input type="checkbox" name="slug-cat" value="1" tabindex="10" />Sport</label><br />
-              <label><input type="checkbox" name="slug-cat" value="1" tabindex="10" />Relax</label><br />
-              <label><input type="checkbox" name="slug-cat" value="1" tabindex="10" />Città & paesi</label><br />
-
+            <section id="side-search" class="background-red">
+              <h4>Cerca</h4>
+                <form action="/search" method="get">
+                  <input name="q" type="text" autocomplete="off"   pattern=".{3,}" tabindex="1"  required />
+                  <input type="submit" value="cerca percorso" tabindex="16">
+              </form>
             </section>
           </section>
 

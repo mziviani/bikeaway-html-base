@@ -4,11 +4,20 @@
     background-color: blue;
   }*/
   #search #search-field #search-advanced-view #search-advanced-options div:nth-child(1) input[type='text'],
-  #search #search-field #search-advanced-view #search-advanced-options div:nth-child(1) select {
+  #search #search-field #search-advanced-view #search-advanced-options div:nth-child(1) select,
+  #search-category input[type='text'] {
     height: auto;
     margin-bottom: 3px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: rgba(0,0,0,0);
+    line-height: 3rem;
+    padding: 3px 5px 3px 5px;
   }
-
+  #search #search-field #search-advanced-view #search-advanced-options div:nth-child(1) input[type='text']:focus,
+  #search-category input[type='text']:focus {
+    border: 2px solid #ffc752;
+  }
   #search #search-field #search-advanced-view #search-advanced-options div input[type='checkbox'],
   #search-category input[type='checkbox'] {
     width: 20px;
@@ -32,7 +41,44 @@
     padding-bottom: 5px;
     height: auto;
   }
+/********** stili category ***********/
+  #search-category div nav ul li {
+    font-size: 1.5rem;
+  }
+  #search-category div nav ul li span {
+    font-size: 1rem;
+  }
+  #search-category header h2 {
+    font-size: 3rem;
+  }
+  #search-category #order,
+  #search-category #filter,
+  #search-category #cat,
+  #search-category #side-search {
+    font-size: 1.5rem;
+    line-height: 2.8rem;
+  }
+  #search-category h4  {
+    font-size: 1.5rem;
+  }
+  #search-category input[type='text'] {
+    text-align: left;
+  }
+  #search-category #side-search input[type='text'] {
+    width: 100%;
+    height: auto;
+  }
+  #search-category #side-search input[type='submit'] {
+    width: 100%;
+    color: #000;
+    background-image: none;
+    height: auto;
+    padding: 0px;
 
+  }
+  #search-category #side-search input[type='submit']:hover {
+    background-color: #ffe9ba;
+  }
   /* stili dei percorsi short */
   .percorso .row .lunghezza {
     text-align: left;
@@ -52,6 +98,18 @@
     margin-top: 3px;
   }
 
+  /*.percorso:not(.highlight) section {
+    border-left: 1px solid #9d0029;
+    border-right: 1px solid #9d0029;
+    border-bottom: 1px solid #9d0029;
+  }
+  .percorso:not(.highlight) a h3,
+  .percorso:not(.highlight) a h4 {
+    border-top: 1px solid #9d0029;
+    border-left: 1px solid #9d0029;
+    border-right: 1px solid #9d0029;
+    padding-top: 8px;
+  }*/
 }
 
 
@@ -172,8 +230,9 @@
     line-height: 3.5rem;
   }
   .percorso section {
-    padding: 12px 0px 5px 5px;
+    padding: 12px 0px 10px 10px;
   }
+
   .percorso .row .lunghezza {
     font-size: 2rem;
   }
@@ -283,6 +342,17 @@
   }
   #piede div.row section button {
     font-size: 2rem;
+  }
+  /******************* category *********/
+  #search-category h4  {
+    font-size: 2rem;
+  }
+  #search-category #order,
+  #search-category #filter,
+  #search-category #cat,
+  #search-category #side-search {
+    font-size: 2rem;
+    line-height: 4rem;
   }
 
 }
