@@ -173,7 +173,8 @@ body {
 }
 
 #search #search-field #search-advanced-view #search-advanced-options div input[type='checkbox'],
-#search-category input[type='checkbox']
+#search-category input[type='checkbox'],
+#other-pins div.row div input[type='checkbox']
  {
   width: 15px;
   height: 15px;
@@ -184,11 +185,12 @@ body {
   -webkit-appearance:button;
   -moz-appearance:button;
   -ms-appearance:button;
-  vertical-align: middle;
+  vertical-align: text-bottom;
   border-radius: 0px;
 }
 #search #search-field #search-advanced-view #search-advanced-options div input[type='checkbox']:checked,
-#search-category input[type='checkbox']:checked  {
+#search-category input[type='checkbox']:checked,
+#other-pins div.row div input[type='checkbox']:checked  {
   background-image: url('../images/checked.svg');
   background-position: center center;
   background-repeat: no-repeat;
@@ -384,36 +386,44 @@ body {
   margin-top: 16px;
 }
 /************ stili category e search ************************/
-#search-category div nav {
+#search-category div nav,
+#scheda div nav {
   margin: 16px 0px 16px 0px;
 }
-#search-category div nav ul {
+#search-category div nav ul,
+#scheda div nav ul {
   margin: 0px 0px 0px 0px;
   padding: 0px 0px 0px 0px;
 }
-#search-category div nav ul li {
+#search-category div nav ul li,
+#scheda div nav ul li {
   display: inline;
   list-style-type: none;
   font-size: 15px;
 }
-#search-category div nav ul li span {
+#search-category div nav ul li span,
+#scheda div nav ul li span {
   font-size: 10px;
 }
-#search-category div nav ul li a {
+#search-category div nav ul li a,
+#scheda div nav ul li a {
   color: #000;
 }
-#search-category div nav ul li a:hover {
+#search-category div nav ul li a:hover,
+#scheda div nav ul li a:hover {
   color: #9d0029;
   text-decoration: none;
 }
-#search-category header h2 {
+#search-category header h2,
+#scheda header h1 {
   margin: 0px 0px 16px 0px;
   text-align: left;
   color: #000;
   font-size: 30px;
   font-weight: normal;
 }
-#search-category header h2 strong {
+#search-category header h2 strong,
+#scheda header h1 {
   color: #9d0029;
   font-weight: bold;
 }
@@ -469,6 +479,65 @@ body {
 }
 /*checkbox riga 176 */
 
+/*************** scheda ****************/
+#other-pins div.row div {
+  padding: 8px 0px 8px 0px;
+  color: #fff;
+  font-weight: bold;
+  font-size: 13px;
+}
+#other-pins div.row div label {
+  margin-right: 20px;
+}
+#scheda #content p {
+  margin-bottom: 25px;
+}
+#scheda #content p.tags,
+#scheda #content p.note {
+  font-size: 13px;
+}
+#scheda #content p.tags span {
+  color: #9d0029;
+  margin-right: 5px;
+  margin-bottom: 20px;
+}
+#scheda #content #dettagli {
+  font-size: 13px;
+}
+#scheda #content #dettagli div {
+  margin-bottom: 10px;
+}
+#scheda #content #dettagli div:nth-child(4) span {
+  color: #9d0029;
+}
+#scheda #content aside div {
+  padding: 8px 8px 0px 8px;
+}
+#scheda #content aside h3 {
+  color: #ffc752;
+  margin: 0px 0px 13px 0px;
+  font-size: 13px;
+}
+#scheda #content aside h4 {
+  color: #000;
+  font-size: 16px;
+  margin: 0px 0px 0px 0px;
+}
+#scheda #content aside h4 span {
+  color: #9d0029;
+  margin-right: 5px;
+}
+#scheda #content aside p {
+  margin: 0px 0px 16px 20px;
+  font-size: 14px;
+  color: #666;
+}
+#scheda #content aside p a {
+  color: #9d0029;
+}
+#scheda #content aside p a:hover {
+  text-decoration: underline;
+}
 /* STILI DEI PERCORSI SHORT */
 .percorso {
   min-height: 210px;
@@ -546,7 +615,8 @@ body {
   width: 100%;
   padding-right: 5px;
 }
-.percorso .row.dettagli div:nth-child(1) span{
+.percorso .row.dettagli div:nth-child(1) span,
+#scheda #content #dettagli div:nth-child(1) span{
   display: inline-block;
   border: 1px solid #ffc752;
   border-radius: 50%;
@@ -554,7 +624,8 @@ body {
   height: 12px;
   margin-left: 2px;
 }
-.percorso .row.dettagli div:nth-child(1) span.full {
+.percorso .row.dettagli div:nth-child(1) span.full,
+#scheda #content #dettagli div:nth-child(1) span.full {
   background-color: #ffc752;
 }
 .percorso p {

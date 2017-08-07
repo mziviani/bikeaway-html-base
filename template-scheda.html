@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <title>Bikeaway - Scopri il veneto su 2 ruote</title>
+    <!-- inserire meta, favicon, opengraph -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:100,300,700" rel="stylesheet">
+    <link rel="stylesheet" media="screen" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" media="screen" href="css/layout.css" />
+    <link rel="stylesheet" media="screen" href="css/layout-mobile.css" />
+  </head>
+
+  <body>
+      <div class="container" id="intestazione">
+        <div class="row">
+          <header class="col-sm-3">
+            <a href="#"><img src="images/logo-bikeaway.svg" alt="Logo Bikeaway" /></a>
+          </header>
+          <!-- pulsanti registrazione e login
+          <section class="col-sm-9">
+            pulsanti registrazione
+          </section>-->
+        </div>
+      </div>
+
+      <div class="container-fluid">
+        <section class="row">
+          <div class="col-md-12" style="padding: 0px;">
+            mappa
+          </div>
+        </section>
+      </div>
+
+      <div class="background-red">
+        <aside class="container" id="other-pins">
+          <div class="row">
+            <div class="col-sm-12">
+              <a href="#" class="visible-xs-block	"><span class="glyphicon glyphicon-list" aria-hidden="true"></span></a>
+              <label><input type="checkbox" name="fontanelle" value="1" />Fontanelle</label>
+              <label><input type="checkbox" name="parcheggi" value="2" />Parcheggi auto</label>
+              <label><input type="checkbox" name="bar" value="3" />Bar</label>
+              <label><input type="checkbox" name="ristoranti" value="4" />Ristoranti</label>
+              <label><input type="checkbox" name="hotel" value="5" />Hotel</label>
+            </div>
+          </div>
+        </aside>
+      </div>
+
+      <article class="container" id="scheda">
+        <div class="row">
+          <nav class="col-sm-12">
+            <ul>
+              <li><a href="">home</a> <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span></li>
+              <li><a href="">livello 2</a> <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span></li>
+              <li><a href="">livello 3</a></li>
+            </ul>
+          </nav>
+          <header class="col-sm-12">
+            <h1>Alla scoperta del centro di Verona</h1>
+          </header>
+        </div>
+        <div class="row" id="content">
+            <div class="col-sm-9">
+              <p>Scopriamo Verona in bicicletta per scoprire i monumenti e i quartieri più
+                affascinanti dimenticati anche dai cittadini veneti.
+                Durante il percorso potrete trovare osterie e trattorie come un tempo per poter
+                assaporare tutta la tradizione veronese.</p>
+              <p class="tags"><span class="glyphicon glyphicon-tags" aria-hidden="true"></span> Relax, Città e paesi</p>
+
+              <div class="row" id="dettagli">
+                <div class="col-sm-3">
+                    Difficoltà <span class="full"></span><span></span><span></span>
+                </div>
+                <div class="col-sm-3">
+                    Pendenza <strong>2%</strong>
+                </div>
+                <div class="col-sm-3">
+                    Tipo di strada <strong>asfalto</strong>
+                </div>
+                <div class="col-sm-3">
+                    Adatto ai bambini <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+                </div>
+                <div class="col-sm-3">
+                    Lunghezza <strong>20 Km</strong>
+                </div>
+                <div class="col-sm-3">
+                    Tempo <strong>1:12:00</strong>
+                </div>
+              </div>
+
+              <p class="note"><strong>note</strong> questa è una nota</p>
+            </div>
+            <aside class="col-sm-3">
+              <div class="background-yellow">
+                  <h3>Annunci</h3>
+                  <h4><span class="glyphicon glyphicon-star" aria-hidden="true"></span>1. Hotel Bologna</h4>
+                  <p>4 stelle, moderno, con ristorante chic<br/>
+                    <a href="#">vai al sito</a>
+                  </p>
+                  <h4><span class="glyphicon glyphicon-star" aria-hidden="true"></span>2. Ristorante trattoria al borgo</h4>
+                  <p>$ristorante vegano<br/>
+                    <a href="#">vai al sito</a>
+                  </p>
+              <div>
+            </aside>
+        </div>
+        <section class="row" id="commenti">
+          <header class="col-sm-9">
+            <h2>commenti</h2>
+          </header>
+          <section class="col-sm-9">
+            menu
+          </section>
+          <section class="col-sm-9">
+            corpo commenti
+          </section>
+        </section>
+      </article>
+
+      <div class="background-red border-yellow">
+        <div class="container" id="piede">
+          <div class="row">
+            <section class="col-sm-4 col-sm-push-4">
+              <h4>Preferenze</h4>
+              <p>Inserisci la tua velocità media per ricalcolare i tempi di percorrenza dei percorsi.</p>
+              <input id="velocita" name="velocita" type="text" autocomplete="off" size="3" pattern="\d{1,2}" maxlength="3" value="20"/>
+              <button type="button">Imposta Km/h</button>
+            </section>
+            <section class="col-sm-4 col-sm-push-4">
+              <h4>Iscriviti alla newsletter</h4>
+              <p>Iscrivendoti riceverai gratuitamente la nostra newsletter mensile che ti terrà aggiornato sulle novità del sito, delle mappe e speciali promozioni per gli iscritti.</p>
+              <input id="newsletter" name="newsletter" type="email" autocomplete="off" size="20" pattern="\d{1,2}" placeholder="esempio@mail.it"/>
+              <button type="button">Iscriviti</button>
+            </section>
+
+            <section class="col-sm-4 col-sm-pull-8">
+              <h4><img src="images/logo-bikeaway-bianco.svg" alt="logo bikeaway" /></h4>
+              <div class="row">
+                  <section class="col-sm-6">
+                    <ul>
+                      <li><a href="#">Home</a></li>
+                      <!--<li><a href="#">Login</a></li>
+                      <li><a href="#">Registrati</a></li>-->
+                      <li><a href="#">Family</a></li>
+                      <li><a href="#">Sport</a></li>
+                      <li><a href="#">Relax</a></li>
+                      <li><a href="#">Città e paesi</a></li>
+                      <li><a href="#">Private Policy</a></li>
+                      <li><a href="#">Help Center</a></li>
+                    </ul>
+                </section>
+                <section class="col-sm-6">
+                  <h5>Scarica l'app</h5>
+                  <ul>
+                    <li><a href="#">App per iPhone</a></li>
+                    <li><a href="#">App per Android</a></li>
+                  </ul>
+                  <h5 id="social">Seguici sui social</h5>
+                  <ul>
+                    <li><a href="#"><img src="images/facebook-logo.svg" alt="logo facebook" /></a></li>
+                    <li><a href="#"><img src="images/facebook-logo.svg" alt="logo facebook" /></a></li>
+
+                  </ul>
+                </section>
+            </div>
+            </section>
+          </div>
+          <footer class="row">
+            <div class="col-sm-12">
+              <p>&copy; 2017 Bikeaway srl - Tutti i diritti riservati - Progetto universitario a scopo didattico</p>
+            </div>
+          </footer>
+        </div>
+      </div>
+
+  <!-- inserire google analytics -->
+  </body>
+</html>
