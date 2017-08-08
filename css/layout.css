@@ -585,8 +585,11 @@ body {
 }
 #commenti form {
   font-size: 15px;
-  line-height: 35px;
+  line-height: 30px;
   border-bottom: 1px solid #9d0029;
+}
+#commenti form  label {
+  color: #666;
 }
 
 #commenti form em {
