@@ -102,20 +102,71 @@
                   <p>$ristorante vegano<br/>
                     <a href="#">vai al sito</a>
                   </p>
-              <div>
+              </div>
             </aside>
         </div>
-        <section class="row" id="commenti">
-          <header class="col-sm-9">
-            <h2>commenti</h2>
+        <article class="row" id="commenti">
+          <header class="col-sm-9  ">
+            <h2>Commenti</h2>
           </header>
-          <section class="col-sm-9">
-            menu
+          <div class="clearfix"></div>
+
+          <div class="col-sm-9" style="margin-bottom:16px;">
+            <div class="row background-red" style="margin:0px">
+              <section class="col-sm-9" id="menu1">
+
+                  <label for="commentType">Filtra Commenti</label> <select name="commentType" id="commentType">
+                                                            <option value="0">Tutti</option>
+                                                            <option value="1">Generali</option>
+                                                            <option value="2">Tappa 1</option>
+                                                            <option value="3">Tappa 2</option>
+                                                            <option value="4">Tappa 3</option>
+                                                          </select>
+
+              </section>
+              <section class="col-sm-3" id="menu2">
+
+                  <a href="#">Inserisci commento</a>
+
+              </section>
+            </div>
+          </div>
+
+          <div class="clearfix"></div>
+          <section class="col-sm-9" style="margin-bottom:16px;">
+            <form method="post" action="/insert-comment" class="row">
+                <div class="col-sm-1"><label for="nome">nome </label></div>
+                <div class="col-sm-5"><input type="text" name="nome" id="nome" placeholder="Inserisci il nome/nick" required  /></div>
+                <div class="col-sm-1"><label for="email">email </label></div>
+                <div class="col-sm-5"><input type="text" name="email" id="email" placeholder="Inserisci l'email" required  /></div>
+                <div class="col-sm-12">
+                  <label for="commento">commento</label><br/>
+                  <textarea id="commento" name="commento" placeholder="inserisci il commento" required></textarea>
+                </div>
+                <div class="col-sm-9"><em>I campi sono tutti obbligatori</em></div>
+                <div class="col-sm-3"><input type="submit" value="inserisci"></div>
+            </form>
           </section>
-          <section class="col-sm-9">
-            corpo commenti
-          </section>
-        </section>
+
+          <div class="clearfix"></div>
+          <article class="col-sm-9 corpo-commento">
+            <p>1.12.16 | <strong>Alex88</strong><br/>
+              questo è un commento di alex 88<br/>ciao ciao ciao
+            </p>
+          </article>
+          <article class="col-sm-9 corpo-commento">
+            <p>1.12.16 | <strong>Alex88</strong><br/>
+              questo è un commento di alex 88<br/>ciao ciao ciao
+            </p>
+          </article>
+          <article class="col-sm-9 corpo-commento">
+            <div class="tappa">1</div>
+            <p>1.12.16 | <strong>Alex88</strong><br/>
+                  questo è un commento di alex 88<br/>ciao ciao ciao
+            </p>
+
+          </article>
+        </article>
       </article>
 
       <div class="background-red border-yellow">
