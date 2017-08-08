@@ -135,10 +135,29 @@
           <div class="clearfix"></div>
           <section class="col-sm-9" style="margin-bottom:16px;">
             <form method="post" action="/insert-comment" class="row">
-                <div class="col-sm-1"><label for="nome">nome </label></div>
+              <!--  <div class="col-sm-1"><label for="nome">nome </label></div>
                 <div class="col-sm-5"><input type="text" name="nome" id="nome" placeholder="Inserisci il nome/nick" required  /></div>
                 <div class="col-sm-1"><label for="email">email </label></div>
                 <div class="col-sm-5"><input type="text" name="email" id="email" placeholder="Inserisci l'email" required  /></div>
+              -->
+                <div class="col-sm-12"><label for="typec">tipo di commento </label><br/>
+                  <select name="typec" id="typec">
+                                                            <option value="1">Generale</option>
+                                                            <option value="2">Tappa 1</option>
+                                                            <option value="3">Tappa 2</option>
+                                                            <option value="4">Tappa 3</option>
+                                                          </select>
+                </div>
+                <div class="col-sm-6">
+                  <label for="nome">nome </label><br/>
+                  <input type="text" name="nome" id="nome" placeholder="Inserisci il nome/nick" required  />
+                </div>
+                <div class="col-sm-6">
+                  <label for="email">email </label><br/>
+                  <input type="text" name="email" id="email" placeholder="Inserisci l'email" required  />
+                </div>
+
+                <div class="clearfix"></div>
                 <div class="col-sm-12">
                   <label for="commento">commento</label><br/>
                   <textarea id="commento" name="commento" placeholder="inserisci il commento" required></textarea>
