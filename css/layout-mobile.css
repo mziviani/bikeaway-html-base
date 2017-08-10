@@ -8,10 +8,10 @@
   #search-category input[type='text'] {
     height: auto;
     margin-bottom: 3px;
-    border-width: 2px;
+  /*   border-width: 2px;
     border-style: solid;
-    border-color: rgba(0,0,0,0);
-    line-height: 3rem;
+   border-color: rgba(0,0,0,0);*/
+    line-height: 2.2rem;
     padding: 3px 5px 3px 5px;
   }
   #search #search-field #search-advanced-view #search-advanced-options div:nth-child(1) input[type='text']:focus,
@@ -19,7 +19,8 @@
     border: 2px solid #ffc752;
   }
   #search #search-field #search-advanced-view #search-advanced-options div input[type='checkbox'],
-  #search-category input[type='checkbox'] {
+  #search-category input[type='checkbox'],
+  #other-pins div.row div input[type='checkbox'] {
     width: 20px;
     height: 20px;
   }
@@ -79,6 +80,53 @@
   #search-category #side-search input[type='submit']:hover {
     background-color: #ffe9ba;
   }
+/*********************** scheda ************************/
+#other-pins div.row div {
+  font-size: 1.3rem;
+}
+#scheda #content p.tags,
+#scheda #content p.note,
+#scheda #content #dettagli,
+#scheda #content aside h3,
+#commenti div div #menu1,
+#commenti div div #menu,
+#commenti div div #menu2 a,
+#commenti .corpo-commento {
+  font-size: 1.3rem;
+}
+#scheda #content aside h4 {
+  font-size: 1.6rem;
+}
+#scheda #content aside p {
+  font-size: 1.4rem;
+}
+#commenti header h2 {
+  font-size: 2.2rem;
+}
+
+#commenti div div #menu1 select,
+#commenti form select {
+  border-radius: 0px;
+}
+#commenti form input[type='submit']{
+  font-size: 1.3rem;
+  border-radius: 0px;
+}
+#commenti form {
+  font-size: 1.3rem;
+  line-height: 2.8rem;
+}
+#commenti form em {
+  font-size: 1.2rem;
+}
+#commenti form input,
+#commenti form textarea {
+  border-radius: 0px;
+  line-height: 2.5rem;
+  border-color: #999;
+  border-style: solid;
+  border-width: 1px;
+}
   /* stili dei percorsi short */
   .percorso .row .lunghezza {
     text-align: left;
@@ -194,7 +242,8 @@
     height: 30px;
   }
   #search #search-field #search-advanced-view #search-advanced-options div input[type='checkbox'],
-  #search-category input[type='checkbox'] {
+  #search-category input[type='checkbox'],
+  #other-pins div.row div input[type='checkbox'] {
     width: 25px;
     height: 25px;
   }
@@ -354,5 +403,75 @@
     font-size: 2rem;
     line-height: 4rem;
   }
+  /***************** scheda **************/
+  #other-pins div div a {
+    margin-bottom: 16px;
+    font-size: 1.5rem;
+    color: #fff;
+    display: block;
+    height: auto;
+    float: left;
+    width: 100%;
+    padding-top: 4px;
+    font-weight: normal;
 
+  }
+  #other-pins div div a span {
+    font-size: 2.7rem;
+    color: #fff;
+    margin-right: 8px;
+    float: left;
+    margin-top: -4px;
+  }
+
+  #other-pins label {
+    display: block;
+    font-size: 1.5rem;
+    margin-bottom: 8px;
+  }
+  #scheda #content p,
+  #scheda #content #dettagli {
+    font-size: 1.8rem;
+  }
+  #scheda #content p.tags
+  {
+    font-size: 1.5rem;
+  }
+  #scheda #content p.note {
+    font-size: 1.7rem;
+  }
+  #scheda #content aside h3 {
+    font-size: 1.7rem;
+  }
+  #commenti div div #menu1{
+    padding-top: 8px;
+    padding-bottom: 8px;
+  }
+  #commenti div div #menu1,
+  #commenti div div #menu,
+  #commenti div div #menu2 a,
+  #commenti div div #menu1 select {
+    font-size: 1.8rem;
+    height: auto;
+  }
+  #commenti form {
+    font-size: 1.8rem;
+    line-height: 3.8rem;
+  }
+  #commenti form input[type='text'],
+  #commenti form input[type='email'],
+  #commenti form textarea {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 5px;
+  }
+  #commenti form input[type='submit'] {
+    font-size: 1.8rem;
+    height: auto;
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+  #commenti .corpo-commento {
+    font-size: 1.6rem;
+  }
 }
