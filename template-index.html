@@ -379,11 +379,11 @@
       <div class="background-red border-yellow">
         <div class="container" id="piede">
           <div class="row">
-            <section class="col-sm-4 col-sm-push-4">
+            <section class="col-sm-4 col-sm-push-4" id="preference">
               <h4>Preferenze</h4>
               <p>Inserisci la tua velocità media per ricalcolare i tempi di percorrenza dei percorsi.</p>
-              <input id="velocita" name="velocita" type="text" autocomplete="off" size="3" pattern="\d{1,2}" maxlength="3" value="20"/>
-              <button type="button">Imposta Km/h</button>
+              <input id="velocita" name="velocita" type="text" autocomplete="off" size="3" pattern="\d{1,2}" maxlength="3" value="8"/>
+              <button type="button" id="setVelocita">Imposta Km/h</button>
             </section>
             <section class="col-sm-4 col-sm-push-4">
               <h4>Iscriviti alla newsletter</h4>
@@ -432,6 +432,17 @@
         </div>
       </div>
 
-  <!-- inserire google analytics -->
+  <!-- inserire google analytics e jquery-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="js/jquery.cookie.js"></script>
+  <script src="js/bikeaway.js"></script>
+  <script>
+	$('document').ready(init);
+	
+	function init() {
+		initCookie();
+	}
+  
+  </script>
   </body>
 </html>

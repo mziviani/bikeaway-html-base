@@ -379,11 +379,36 @@ body {
 #piede div.row section button:hover {
   background-color: #ffe9ba;
 }
+#piede div.row section button:disabled,
+#piede div.row section button:disabled:hover {
+	background-color: #ccc;
+	color: #988BA1;
+}
+#piede div.row section input[type='text']:disabled{
+	background-color: #ccc;
+	color: #988BA1;
+}
 #piede footer div p {
   color: #fff;
   font-size: 13px;
   text-align: center;
   margin-top: 16px;
+}
+#piede #preference p.msg {
+	width: 100%;
+	text-align: center;
+	font-size:12px;
+	padding-top:2px;
+	padding-bottom: 2px;
+}
+#piede #preference p.msg.wait {
+	background-color: #FFC60D;
+}
+#piede #preference p.msg.ok {
+	background-color: #50C60D;
+}
+#piede #preference p.msg.error{
+	background-color: #F70000;
 }
 /************ stili category e search ************************/
 #search-category div nav,
