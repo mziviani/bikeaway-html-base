@@ -211,6 +211,9 @@
 #search #search-field #search-advanced-view a::before {
   content: "filtri avanzati";
 }
+#search #search-field #search-advanced-view a.remove::before {
+  content: "rimuovi filtri";
+}
 #search #search-field #search-advanced-view a span {
   display: none;
 }
