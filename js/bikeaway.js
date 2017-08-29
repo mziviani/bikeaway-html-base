@@ -196,39 +196,42 @@ var lngDefault = 10.991621500000065;
 																			center: {lat: latDefault, lng: lngDefault},
 																			zoom: 13,
 																			streetViewControl: false,
-																			fullscreenControl: false
+																			fullscreenControl: false,
+																			mapTypeControl: false
+																			
 																		});
 
 																		//marker esempi
-																		addMarker(mapHome,'1',45.43838419999999,10.991621500000065 )
-																		addMarker(mapHome,'2',46.43838419999999,11.991621500000065 )
+																		addMarker(mapHome,null,45.43838419999999,10.991621500000065 )
+																		addMarker(mapHome,null,46.43838419999999,11.991621500000065 )
 
-																		alert(mapHome.getZoom())
+
 		 }
 
 		 function addMarker(map,label,lat,lng) {
-			 /*var image = {
-    url: 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png',
+			/* var image = {
+    url: 'http://localhost/html-template/images/pinhome.svg',
     // This marker is 20 pixels wide by 32 pixels high.
     size: new google.maps.Size(20, 32),
     // The origin for this image is (0, 0).
     origin: new google.maps.Point(0, 0),
     // The anchor for this image is the base of the flagpole at (0, 32).
     anchor: new google.maps.Point(0, 32)
+	
+	////icon: {url:'http://localhost/html-template/images/pinhome.svg', scaledSize: new google.maps.Size(18, 27)},))
   };*/
-
 			 var marker = new google.maps.Marker({
 					 position: {lat: lat, lng: lng},
 					 map: map,
 					 label: {text: label, color: "white"},
-					 image: 'url',
+					 icon: 'http://localhost/html-template/images/pinhome.png',
 					 clickable: true
 				 });
 
 				 var infowindow = new google.maps.InfoWindow({
-    	 			content: '<h1>ciao</h1>'
+    	 			content: '<h6 class="titlemap"><a href="#">I monumenti di verona</a></h6><p class="textmap">Difficoltà <span class="full"></span><span class="full"></span><span></span></p><p class="textmap">Strada <strong>Asfalto</strong></p><p class="textmap">Pendenza <strong>2%</strong></p><p class="tagsmap"><span class="glyphicon glyphicon-tags" aria-hidden="true"></span> Relax</p>'
   				});
-
+ 
 				marker.addListener('click', function() {
 	    														infowindow.open(map, marker);
 	  														});

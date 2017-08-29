@@ -752,3 +752,40 @@ body {
   margin-right: 5px;
   color:#9d0029;
 }
+/************* MAPS */
+h6.titlemap {
+	color: #9d0029;
+	font-family: 'Roboto Slab', "Times New Roman", Times, serif;
+	font-size: 14px;
+	margin: 10px 0px 15px 0px;
+	font-weight: normal;
+}
+h6.titlemap a {
+	color: #9d0029;
+	text-decoration: none;
+}
+p.textmap {
+	font-family: 'Roboto Slab', "Times New Roman", Times, serif;
+	font-size: 13px;
+	margin: 0px 0px 5px 0px;
+}
+p.textmap span {
+	display: inline-block;
+  border: 1px solid #ffc752;
+  border-radius: 50%;
+  width: 10px;
+  height: 10px;
+  margin-left: 2px;
+}
+p.textmap span.full {
+  background-color: #ffc752;
+}
+p.tagsmap {
+	font-family: 'Roboto Slab', "Times New Roman", Times, serif;
+	font-size: 12px;
+	margin-top: 15px;
+}
+p.tagsmap span {
+  color: #9d0029;
+  margin-right: 5px;
+}
