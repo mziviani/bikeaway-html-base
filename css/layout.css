@@ -441,7 +441,7 @@ body {
 }
 #search-category header h2,
 #scheda header h1 {
-  margin: 0px 0px 16px 0px;
+  margin: 0px 0px 40px 0px;
   text-align: left;
   color: #000;
   font-size: 30px;
@@ -479,7 +479,20 @@ body {
   border-style: none;
   border-width: 0px;
 }
-
+#search-category #cat ul {
+  margin: 0px 0px 0px 0px;
+  padding: 0px 0px 0px 0px;
+}
+#search-category #cat ul li {
+  list-style-type: none;
+}
+#search-category #cat ul li a {
+  color: #fff;
+}
+#search-category #cat ul li a:hover {
+  color: #ffe9ba;
+  text-decoration: none;
+}
 #search-category #side-search input[type='text'] {
   width: 80%;
   height: 30px;
@@ -500,6 +513,18 @@ body {
   border-radius: 0px;
 }
 #search-category #side-search input[type='submit']:hover {
+  background-color: #ffe9ba;
+}
+#search-category #filter button{
+  width: 100%;
+  margin-top: 24px;
+  background-color: #ffc752;
+  color: #000;
+  border-radius: 0px;
+  border-style: none;
+  border-width: 0px;
+}
+#search-category #filter button:hover {
   background-color: #ffe9ba;
 }
 /*checkbox riga 176 */
