@@ -26,8 +26,8 @@
 
         <div class="container-fluid border-red">
           <div class="row">
-            <div class="col-sm-12">
-              mappa
+            <div class="col-sm-12" style="padding: 0px; width:100%; height:500px;" id="map">
+
             </div>
           </div>
         </div>
@@ -50,7 +50,7 @@
           <section class="col-sm-3 col-sm-push-9">
             <section id="order" class="background-red">
               <h4>Ordinamento</h4>
-              <select name="type" id="type" tabindex="8">
+              <select name="orderInput" id="orderInput" tabindex="8">
                                                       <option value="0">Alfabetico Crescente</option>
                                                       <option value="1">Alfabetico Decrescente</option>
                                                       <option value="2">Distanza Crescente</option>
@@ -69,13 +69,13 @@
                       <label for="lung">lunghezza max.</label>
                     </div>
                     <div class="col-md-4 col-sm-12">
-                      <input type="text" name="lung" id="lung" tabindex="6" placeholder="Km" pattern="[0-9]+{0,3}" maxlength="3"/><br/>
+                      <input type="text" name="lung" id="lung" tabindex="6" placeholder="Km" pattern="[0-9]{0,3}" maxlength="3"/><br/>
                     </div>
                     <div class="col-md-8 col-sm-12">
                       <label for="pend">pendenza max.</label>
                     </div>
                     <div class="col-md-4 col-sm-12">
-                      <input type="text" name="pend" id="pend" tabindex="7" placeholder="%" pattern="[0-9]+{0,3}" maxlength="3"  /><br/>
+                      <input type="text" name="pend" id="pend" tabindex="7" placeholder="%" pattern="[0-9]{0,3}" maxlength="3"  /><br/>
                     </div>
                     <div class="col-md-8 col-sm-12">
                       <label for="type">tipo di strada</label>
@@ -104,16 +104,19 @@
               <label><input type="checkbox" name="bambini" value="1" tabindex="10" />vicino a me</label><br />
               <label><input type="checkbox" name="vicino" value="1" tabindex="11"  />adatto ai bambini</label><br/>
 
+              <button type="button">applica</button>
+
             </section>
 
             <!--categorie -->
             <section id="cat" class="background-red">
               <h4>Categorie</h4>
-              <label><input type="checkbox" name="slug-cat" value="1" tabindex="10" />Family</label><br />
-              <label><input type="checkbox" name="slug-cat" value="1" tabindex="10" />Sport</label><br />
-              <label><input type="checkbox" name="slug-cat" value="1" tabindex="10" />Relax</label><br />
-              <label><input type="checkbox" name="slug-cat" value="1" tabindex="10" />Città & paesi</label><br />
-
+              <ul>
+                <li><a href="">Family</a></li>
+                <li><a href="">Sports</a></li>
+                <li><a href="">Relax</a></li>
+                <li><a href="">Città e paesi</a></li>
+              </ul>
             </section>
           </section>
 
@@ -187,11 +190,11 @@
       <div class="background-red border-yellow">
         <div class="container" id="piede">
           <div class="row">
-            <section class="col-sm-4 col-sm-push-4">
+            <section class="col-sm-4 col-sm-push-4" id="preference">
               <h4>Preferenze</h4>
               <p>Inserisci la tua velocità media per ricalcolare i tempi di percorrenza dei percorsi.</p>
               <input id="velocita" name="velocita" type="text" autocomplete="off" size="3" pattern="\d{1,2}" maxlength="3" value="20"/>
-              <button type="button">Imposta Km/h</button>
+              <button type="button" id="setVelocita">Imposta Km/h</button>
             </section>
             <section class="col-sm-4 col-sm-push-4">
               <h4>Iscriviti alla newsletter</h4>
@@ -241,5 +244,17 @@
       </div>
 
   <!-- inserire google analytics -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDHISEgt5-1Z6cK7pyntyeQ9ffd3TJa11k&callback=initMapCategory"></script>
+  <script src="js/jquery.cookie.js"></script>
+  <script src="js/bikeaway.js"></script>
+  <script>
+  $('document').ready(init);
+
+  function init() {
+    initCookie();
+    initCategory();
+  }
+  </script>
   </body>
 </html>
