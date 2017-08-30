@@ -1,3 +1,5 @@
+//riga 219 cambira url immagine pin mappa
+
 //funzione controllo dimensione finestra
 function windowMobile() {
 	var size = $(window).width();
@@ -166,7 +168,7 @@ function setVelocita(vel) {
 
 }
 
-//gestione mappa
+//gestione mappa home
 var mapHome;
 
 //posizione verona centro
@@ -198,41 +200,147 @@ var lngDefault = 10.991621500000065;
 																			streetViewControl: false,
 																			fullscreenControl: false,
 																			mapTypeControl: false
-																			
+
 																		});
 
-																		//marker esempi
-																		addMarker(mapHome,null,45.43838419999999,10.991621500000065 )
-																		addMarker(mapHome,null,46.43838419999999,11.991621500000065 )
+																		//marker esempi chiamata ajax
+																		addMarker(mapHome,'1',45.43838419999999,10.991621500000065 )
+																		addMarker(mapHome,'1',45.44,10.99163 )
 
 
 		 }
 
 		 function addMarker(map,label,lat,lng) {
-			/* var image = {
-    url: 'http://localhost/html-template/images/pinhome.svg',
-    // This marker is 20 pixels wide by 32 pixels high.
-    size: new google.maps.Size(20, 32),
-    // The origin for this image is (0, 0).
-    origin: new google.maps.Point(0, 0),
-    // The anchor for this image is the base of the flagpole at (0, 32).
-    anchor: new google.maps.Point(0, 32)
-	
-	////icon: {url:'http://localhost/html-template/images/pinhome.svg', scaledSize: new google.maps.Size(18, 27)},))
-  };*/
+
 			 var marker = new google.maps.Marker({
 					 position: {lat: lat, lng: lng},
 					 map: map,
-					 label: {text: label, color: "white"},
-					 icon: 'http://localhost/html-template/images/pinhome.png',
+					 label: {text:label, color:'white'},
+					 icon: 'http://localhost/bikeaway-html-base-master/images/pinhome.png',
 					 clickable: true
 				 });
-
 				 var infowindow = new google.maps.InfoWindow({
     	 			content: '<h6 class="titlemap"><a href="#">I monumenti di verona</a></h6><p class="textmap">Difficoltà <span class="full"></span><span class="full"></span><span></span></p><p class="textmap">Strada <strong>Asfalto</strong></p><p class="textmap">Pendenza <strong>2%</strong></p><p class="tagsmap"><span class="glyphicon glyphicon-tags" aria-hidden="true"></span> Relax</p>'
   				});
- 
+
 				marker.addListener('click', function() {
 	    														infowindow.open(map, marker);
 	  														});
+
+
+
 		 }
+		 function addMarkerNoLabel(map,lat,lng) {
+
+			var marker = new google.maps.Marker({
+					position: {lat: lat, lng: lng},
+					map: map,
+					icon: 'http://localhost/bikeaway-html-base-master/images/pinhome.png',
+					clickable: true
+				});
+				var infowindow = new google.maps.InfoWindow({
+					 content: '<h6 class="titlemap"><a href="#">I monumenti di verona</a></h6><p class="textmap">Difficoltà <span class="full"></span><span class="full"></span><span></span></p><p class="textmap">Strada <strong>Asfalto</strong></p><p class="textmap">Pendenza <strong>2%</strong></p><p class="tagsmap"><span class="glyphicon glyphicon-tags" aria-hidden="true"></span> Relax</p>'
+				 });
+
+			 marker.addListener('click', function() {
+																 infowindow.open(map, marker);
+															 });
+
+
+		}
+
+
+
+
+
+
+		 /********* category map *****/
+		 function initMapCategory() {
+
+			 mapHome = new google.maps.Map(document.getElementById('map'), {
+																		 center: {lat: latDefault, lng: lngDefault},
+																		 zoom: 12,
+																		 streetViewControl: false,
+																		 fullscreenControl: false,
+																		 mapTypeControl: false
+
+																	 });
+
+
+
+																	//test
+																	 addMarkerNoLabel(mapHome,45.43838419999999,10.991621500000065 )
+																	 addMarkerNoLabel(mapHome,44.5,10.99163 )
+																	 addMarkerNoLabel(mapHome,45.42,9.98 )
+																	 addMarkerNoLabel(mapHome,45.5,11 )
+																	 addMarkerNoLabel(mapHome,45.6,10.8 )
+																	 addMarkerNoLabel(mapHome,45.3,12 )
+																	addMarkerNoLabel(mapHome,48,12 )
+
+																		var bounds = new google.maps.LatLngBounds();
+
+																		bounds.extend(new google.maps.LatLng(45.43838419999999, 10.991621500000065));
+																		bounds.extend(new google.maps.LatLng(44.5, 10.99163));
+																		bounds.extend(new google.maps.LatLng(45.42, 9.98));
+																		bounds.extend(new google.maps.LatLng(45.5, 11));
+																		bounds.extend(new google.maps.LatLng(45.6, 10.8));
+																		bounds.extend(new google.maps.LatLng(45.3, 12));
+																		bounds.extend(new google.maps.LatLng(48, 12));
+																		mapHome.fitBounds(bounds);
+
+		 }
+
+		function initCategory() {
+			var btnfiltri = $('#filter button');
+			btnfiltri.click(attivaFiltri);
+		}
+
+		function attivaFiltri() {
+			var queryRaw = window.location.search.substring(1);
+			var queryObj = null;
+
+			var inputLung = $("#lung");
+			var inputPend = $("#pend");
+			var selectStrada = $("#type");
+			var selectDifficolta = $("#diff");
+			var inputCheckbox = $("#filter input[type='checkbox']");
+
+			if (queryRaw.length>0 && queryRaw.indexOf("=")>-1) {
+					queryObj = $.parseJSON('{"' + decodeURI(queryRaw).replace(/"/g, '\\"').replace(/&/g, '","').replace(/=/g,'":"') + '"}')
+			}
+			if(queryObj!= null) {
+
+
+				/*if (queryObj.lung != inputLung.val() && inputLung.val() != null) {
+						queryObj.lung =inputLung.val();
+						alert("null")
+				} else if (inputLung.val() == null && queryObj.lung != null) {
+					delete queryObj.lung;
+				}*/
+			} else {
+
+				queryObj = new Object();
+
+				if (inputLung.val().length>0) {
+						queryObj.lung = inputLung.val();
+				}
+
+				if (inputPend.val().length>0) {
+						queryObj.pend = inputPend.val();
+				}
+					queryObj.type = selectStrada.val();
+					queryObj.diff = selectDifficolta.val();
+
+				if (inputCheckbox[0].checked) {
+					queryObj.bambini = 1;
+				}
+
+				if (inputCheckbox[1].checked) {
+					queryObj.vicino = 1;
+				}
+
+			}
+
+			//cambio url
+			window.history.pushState({}, window.document.title, "?"+$.param(queryObj));
+		}
