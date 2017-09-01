@@ -26,8 +26,8 @@
 
         <div class="container-fluid border-red">
           <div class="row">
-            <div class="col-sm-12">
-              mappa
+            <div class="col-sm-12" style="padding: 0px; width:100%; height:500px;" id="map">
+
             </div>
           </div>
         </div>
@@ -50,7 +50,7 @@
           <section class="col-sm-3 col-sm-push-9">
             <section id="order" class="background-red">
               <h4>Ordinamento</h4>
-              <select name="type" id="type" tabindex="8">
+              <select name="orderInput" id="orderInput"tabindex="8">
                                                       <option value="0">Alfabetico Crescente</option>
                                                       <option value="1">Alfabetico Decrescente</option>
                                                       <option value="2">Distanza Crescente</option>
@@ -128,7 +128,7 @@
                     <section>
                       <div class="row">
                         <div class="col-md-9"><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span> Valeggio sul Mincio (VR)</div>
-                        <div class="lunghezza col-md-3"><div>20 Km</div></div>
+                        <div class="lunghezza col-md-3"><strong>20 Km</strong></div>
                       </div>
                         <div class="row dettagli">
                           <div class="col-md-6">Difficoltà <span class="full"></span><span></span><span></span></div>
@@ -147,7 +147,7 @@
                     <section>
                       <div class="row">
                         <div class="col-md-9"><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span> Valeggio sul Mincio (VR)</div>
-                        <div class="lunghezza col-md-3"><div>20 Km</div></div>
+                        <div class="lunghezza col-md-3"><strong>20 Km</strong></div>
                       </div>
                         <div class="row dettagli">
                           <div class="col-md-6">Difficoltà <span class="full"></span><span></span><span></span></div>
@@ -166,7 +166,7 @@
                     <section>
                       <div class="row">
                         <div class="col-md-9"><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span> Valeggio sul Mincio (VR)</div>
-                        <div class="lunghezza col-md-3"><div>20 Km</div></div>
+                        <div class="lunghezza col-md-3"><strong>20 Km</strong></div>
                       </div>
                         <div class="row dettagli">
                           <div class="col-md-6">Difficoltà <span class="full"></span><span></span><span></span></div>
@@ -187,11 +187,11 @@
       <div class="background-red border-yellow">
         <div class="container" id="piede">
           <div class="row">
-            <section class="col-sm-4 col-sm-push-4">
+            <section class="col-sm-4 col-sm-push-4" id="preference">
               <h4>Preferenze</h4>
               <p>Inserisci la tua velocità media per ricalcolare i tempi di percorrenza dei percorsi.</p>
               <input id="velocita" name="velocita" type="text" autocomplete="off" size="3" pattern="\d{1,2}" maxlength="3" value="20"/>
-              <button type="button">Imposta Km/h</button>
+              <button type="button" id="setVelocita">Imposta Km/h</button>
             </section>
             <section class="col-sm-4 col-sm-push-4">
               <h4>Iscriviti alla newsletter</h4>
@@ -241,5 +241,17 @@
       </div>
 
   <!-- inserire google analytics -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDHISEgt5-1Z6cK7pyntyeQ9ffd3TJa11k&callback=initMapCategory"></script>
+  <script src="js/jquery.cookie.js"></script>
+  <script src="js/bikeaway.js"></script>
+  <script>
+  $('document').ready(init);
+
+  function init() {
+    initCookie();
+    initCategory();
+  }
+  </script>
   </body>
 </html>

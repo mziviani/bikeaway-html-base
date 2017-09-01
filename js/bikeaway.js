@@ -146,11 +146,13 @@ function setVelocita(vel) {
 	}
 
 	//funzione di calcolo della velocità
-	var campi = $('.row.dettagli .col-md-6:nth-child(2) strong');
-	var lunghezza = $('.lunghezza div');
+	var campi = $('.row.dettagli .col-md-6:nth-child(2) strong, #dettagli #tempo strong');
+	var lunghezza = $('.lunghezza strong');
 
 	for (var i = 0; i<lunghezza.length; i++) {
 		var secondi = (parseInt($(lunghezza[i]).text())/velocitaDaUsare)*60*60;
+
+		console.log(parseInt($(lunghezza[i]).text()));
 
 		 var hours   = Math.floor(secondi / 3600);
 		var minutes = Math.floor((secondi - (hours * 3600)) / 60);
@@ -216,7 +218,7 @@ var lngDefault = 10.991621500000065;
 					 position: {lat: lat, lng: lng},
 					 map: map,
 					 label: {text:label, color:'white'},
-					 icon: 'http://localhost/bikeaway-html-base-master/images/pinhome.png',
+					 icon: 'http://localhost/html-template/images/pinhome.png',
 					 clickable: true
 				 });
 				 var infowindow = new google.maps.InfoWindow({
@@ -235,7 +237,7 @@ var lngDefault = 10.991621500000065;
 			var marker = new google.maps.Marker({
 					position: {lat: lat, lng: lng},
 					map: map,
-					icon: 'http://localhost/bikeaway-html-base-master/images/pinhome.png',
+					icon: 'http://localhost/html-template/images/pinhome.png',
 					clickable: true
 				});
 				var infowindow = new google.maps.InfoWindow({
@@ -292,7 +294,14 @@ var lngDefault = 10.991621500000065;
 
 		function initCategory() {
 			var btnfiltri = $('#filter button');
+			var order = $('#order #orderInput');
+
 			btnfiltri.click(attivaFiltri);
+			order.change(attivaOrdinamento);
+		}
+
+		function attivaOrdinamento() {
+			alert("creare la funzione di ordinamento 1. disabilitare pulsanti 2. disabilitare visualizzazione 3. ordinare 4. riabilitare")
 		}
 
 		function attivaFiltri() {
@@ -310,36 +319,76 @@ var lngDefault = 10.991621500000065;
 			}
 			if(queryObj!= null) {
 
-
-				/*if (queryObj.lung != inputLung.val() && inputLung.val() != null) {
-						queryObj.lung =inputLung.val();
-						alert("null")
-				} else if (inputLung.val() == null && queryObj.lung != null) {
+				if (queryObj.lung != inputLung.val() && inputLung.val().trim() != '') {
+						queryObj.lung =inputLung.val().trim();
+				} else if ((inputLung.val().trim() == '' || inputLung.val() == null) && queryObj.lung != null) {
 					delete queryObj.lung;
-				}*/
+				}
+
+				if (queryObj.pend != inputPend.val() && inputPend.val().trim() != '') {
+						queryObj.pend =inputPend.val().trim();
+				} else if ((inputPend.val().trim() == '' || inputPend.val() == null) && queryObj.pend != null) {
+					delete queryObj.pend;
+				}
+
+				if (queryObj.type != selectStrada.val()) {
+						queryObj.type =selectStrada.val().trim();
+				}
+
+				if (queryObj.diff != selectDifficolta.val()) {
+						queryObj.diff =selectDifficolta.val().trim();
+				}
+
+
+				switch (inputCheckbox[0].checked) {
+					case true:
+							queryObj.vicino=1;
+						break;
+					case false:
+						queryObj.vicino=0;
+					break;
+				}
+
+				switch (inputCheckbox[1].checked) {
+					case true:
+							queryObj.bambini=1;
+						break;
+					case false:
+						queryObj.bambini=0;
+					break;
+				}
+
+
+
+
 			} else {
 
 				queryObj = new Object();
 
-				if (inputLung.val().length>0) {
-						queryObj.lung = inputLung.val();
+				if (inputLung.val().trim().length>0) {
+						queryObj.lung = inputLung.val().trim();
 				}
 
-				if (inputPend.val().length>0) {
-						queryObj.pend = inputPend.val();
+				if (inputPend.val().trim().length>0) {
+						queryObj.pend = inputPend.val().trim();
 				}
 					queryObj.type = selectStrada.val();
 					queryObj.diff = selectDifficolta.val();
 
-				if (inputCheckbox[0].checked) {
-					queryObj.bambini = 1;
-				}
-
 				if (inputCheckbox[1].checked) {
-					queryObj.vicino = 1;
+					queryObj.bambini = 1;
+				} else {
+					queryObj.bambini = 0;
 				}
 
+				if (inputCheckbox[0].checked) {
+					queryObj.vicino = 1;
+				}	else {
+					queryObj.vicino = 0;
+				}
 			}
+
+			console.log("checked: " + inputCheckbox[1].checked + "\n obj: " + queryObj.bambini);
 
 			//cambio url
 			window.history.pushState({}, window.document.title, "?"+$.param(queryObj));

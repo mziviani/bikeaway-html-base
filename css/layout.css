@@ -750,11 +750,12 @@ body {
 .percorso .row .lunghezza {
   text-align: right;
 }
-.percorso .row .lunghezza div {
+.percorso .row .lunghezza strong {
   background-color: #ffc752;
   display: inline-block;
   width: 100%;
   padding-right: 5px;
+  font-weight: normal;
 }
 .percorso .row.dettagli div:nth-child(1) span,
 #scheda #content #dettagli div:nth-child(1) span{

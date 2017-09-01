@@ -81,10 +81,10 @@
                 <div class="col-sm-3">
                     Adatto ai bambini <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
                 </div>
-                <div class="col-sm-3">
-                    Lunghezza <strong>20 Km</strong>
+                <div class="col-sm-3 lunghezza">
+                    <div>Lunghezza <strong>20 Km</strong></div>
                 </div>
-                <div class="col-sm-3">
+                <div class="col-sm-3" id="tempo">
                     Tempo <strong>1:12:00</strong>
                 </div>
               </div>
@@ -187,11 +187,11 @@
       <div class="background-red border-yellow">
         <div class="container" id="piede">
           <div class="row">
-            <section class="col-sm-4 col-sm-push-4">
+            <section class="col-sm-4 col-sm-push-4" id="preference">
               <h4>Preferenze</h4>
               <p>Inserisci la tua velocità media per ricalcolare i tempi di percorrenza dei percorsi.</p>
               <input id="velocita" name="velocita" type="text" autocomplete="off" size="3" pattern="\d{1,2}" maxlength="3" value="20"/>
-              <button type="button">Imposta Km/h</button>
+              <button type="button" id="setVelocita">Imposta Km/h</button>
             </section>
             <section class="col-sm-4 col-sm-push-4">
               <h4>Iscriviti alla newsletter</h4>
@@ -241,5 +241,16 @@
       </div>
 
   <!-- inserire google analytics -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDHISEgt5-1Z6cK7pyntyeQ9ffd3TJa11k&callback=initMapCategory"></script>
+  <script src="js/jquery.cookie.js"></script>
+  <script src="js/bikeaway.js"></script>
+  <script>
+  $('document').ready(init);
+
+  function init() {
+    initCookie();
+  }
+  </script>
   </body>
 </html>
