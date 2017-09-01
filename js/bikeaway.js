@@ -152,7 +152,6 @@ function setVelocita(vel) {
 	for (var i = 0; i<lunghezza.length; i++) {
 		var secondi = (parseInt($(lunghezza[i]).text())/velocitaDaUsare)*60*60;
 
-		console.log(parseInt($(lunghezza[i]).text()));
 
 		 var hours   = Math.floor(secondi / 3600);
 		var minutes = Math.floor((secondi - (hours * 3600)) / 60);
@@ -388,8 +387,50 @@ var lngDefault = 10.991621500000065;
 				}
 			}
 
-			console.log("checked: " + inputCheckbox[1].checked + "\n obj: " + queryObj.bambini);
 
 			//cambio url
 			window.history.pushState({}, window.document.title, "?"+$.param(queryObj));
+		}
+
+
+		function initScheda() {
+			$('#commenti #menu2 a').click(campiCommento);
+			//nascondo i campi input
+			$('#commenti #areaInserimento').hide();
+			//filtro commenti
+			$('#commenti #menu1 select').change(filtraCommentiChange);
+			
+		}
+
+		function campiCommento(e) {
+			e.preventDefault();
+			$('#commenti #areaInserimento').slideToggle();
+		}
+
+		function filtraCommentiChange(e) {
+			var dd = $(e.target);
+			var scelta = parseInt(dd.val());
+
+			var commenti = $('#commenti .corpo-commento');
+			var commentiTappe = $('#commenti .corpo-commento div.tappa').parents('article.corpo-commento');
+			var commentiGenerali = commenti.not(commentiTappe);
+
+			if(scelta==-1) {
+				commenti.delay(50).fadeIn(200);
+			} else if (scelta==0) {
+				commentiTappe.fadeOut(10);
+				commentiGenerali.delay(50).fadeIn(200);
+			} else {
+				commentiGenerali.fadeOut(10);
+				commentiTappe.each(function() {
+																				if ($(this).children("div.tappa").text()==scelta) {
+																						$(this).delay(50).fadeIn(200);
+																				} else {
+																						$(this).fadeOut(10);
+																				}
+													});
+			}
+
+
+
 		}

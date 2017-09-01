@@ -42,6 +42,7 @@
               <label><input type="checkbox" name="bar" value="3" />Bar</label>
               <label><input type="checkbox" name="ristoranti" value="4" />Ristoranti</label>
               <label><input type="checkbox" name="hotel" value="5" />Hotel</label>
+              <label><input type="checkbox" name="alert" value="6" />Alert Utenti</label>
             </div>
           </div>
         </aside>
@@ -116,11 +117,11 @@
               <section class="col-sm-9" id="menu1">
 
                   <label for="commentType">Filtra Commenti</label> <select name="commentType" id="commentType">
-                                                            <option value="0">Tutti</option>
-                                                            <option value="1">Generali</option>
-                                                            <option value="2">Tappa 1</option>
-                                                            <option value="3">Tappa 2</option>
-                                                            <option value="4">Tappa 3</option>
+                                                            <option value="-1">Tutti</option>
+                                                            <option value="0">Generali</option>
+                                                            <option value="1">Tappa 1</option>
+                                                            <option value="2">Tappa 2</option>
+                                                            <option value="3">Tappa 3</option>
                                                           </select>
 
               </section>
@@ -133,7 +134,7 @@
           </div>
 
           <div class="clearfix"></div>
-          <section class="col-sm-9" style="margin-bottom:24px;">
+          <section class="col-sm-9" style="margin-bottom:24px;" id="areaInserimento">
             <form method="post" action="/insert-comment" class="row">
 
                 <div class="col-sm-12"><label for="typec">Tipo di commento </label><br/>
@@ -160,6 +161,9 @@
                 </div>
                 <div class="col-sm-9"><em>I campi sono tutti obbligatori</em></div>
                 <div class="col-sm-3"><input type="submit" value="inserisci"></div>
+
+              <!--  <div class="col-md-12"><p class="msg wait">messaggio</p></div>-->
+
             </form>
           </section>
 
@@ -180,6 +184,26 @@
                   questo è un commento di alex 88<br/>ciao ciao ciao
             </p>
 
+          </article>
+          <article class="col-sm-9 corpo-commento">
+            <div class="tappa">2</div>
+            <p>1.12.16 | <strong>Alex88</strong><br/>
+                  questo è un commento di alex 88<br/>ciao ciao ciao
+            </p>
+
+          </article>
+          <article class="col-sm-9 corpo-commento">
+            <div class="tappa">1</div>
+            <p>1.12.16 | <strong>Alex88</strong><br/>
+                  questo è un commento di alex 88<br/>ciao ciao ciao
+            </p>
+
+          </article>
+
+          <article class="col-sm-9 corpo-commento">
+            <p>1.12.16 | <strong>Alex88</strong><br/>
+              questo è un commento di alex 88<br/>ciao ciao ciao
+            </p>
           </article>
         </article>
       </article>
@@ -242,7 +266,7 @@
 
   <!-- inserire google analytics -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDHISEgt5-1Z6cK7pyntyeQ9ffd3TJa11k&callback=initMapCategory"></script>
+<!--  <script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDHISEgt5-1Z6cK7pyntyeQ9ffd3TJa11k&callback=initMapCategory"></script>-->
   <script src="js/jquery.cookie.js"></script>
   <script src="js/bikeaway.js"></script>
   <script>
@@ -250,6 +274,8 @@
 
   function init() {
     initCookie();
+    initScheda();
+
   }
   </script>
   </body>

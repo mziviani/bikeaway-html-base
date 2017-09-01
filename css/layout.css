@@ -394,21 +394,31 @@ body {
   text-align: center;
   margin-top: 16px;
 }
-#piede #preference p.msg {
+#piede #preference p.msg,
+#areaInserimento p.msg {
 	width: 100%;
 	text-align: center;
 	font-size:12px;
 	padding-top:2px;
 	padding-bottom: 2px;
 }
-#piede #preference p.msg.wait {
+#piede #preference p.msg.wait,
+#areaInserimento p.msg.wait {
 	background-color: #FFC60D;
+  color: #000;
 }
-#piede #preference p.msg.ok {
+#piede #preference p.msg.ok,
+#areaInserimento p.msg.ok {
 	background-color: #50C60D;
+  color: #fff;
 }
-#piede #preference p.msg.error{
+#piede #preference p.msg.error,
+#areaInserimento p.msg.error{
 	background-color: #F70000;
+  color: #fff;
+}
+#areaInserimento p {
+  font-size:15px !important;
 }
 /************ stili category e search ************************/
 #search-category div nav,
