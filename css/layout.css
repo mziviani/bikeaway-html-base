@@ -625,6 +625,7 @@ body {
   color: #000;
   height: 20px;
   margin-left: 8px;
+  border-radius: 0px;
 }
 #commenti div div #menu2 a {
   display: block;
@@ -669,6 +670,16 @@ body {
 #commenti form textarea {
   width: 100%;
   line-height: 25px;
+}
+#commenti #areaInserimento select{
+  border-radius: 0px;
+}
+#commenti #areaInserimento input[type='text'],
+#commenti #areaInserimento input[type='email'],
+#commenti #areaInserimento textarea {
+  border-color: #ccc;
+  border-style: solid;
+  border-width: 1px;
 }
 #commenti .corpo-commento {
   font-size: 13px;
