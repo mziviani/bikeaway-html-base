@@ -205,19 +205,37 @@ var lngDefault = 10.991621500000065;
 																		});
 
 																		//marker esempi chiamata ajax
-																		addMarker(mapHome,'1',45.43838419999999,10.991621500000065 )
-																		addMarker(mapHome,'1',45.44,10.99163 )
+																		addMarker(mapHome,'1',45.43838419999999,10.991621500000065,0)
+																		addMarker(mapHome,'1',45.44,10.99163,0)
+
 
 
 		 }
+		 function pinMarker(type) {
+			 var img
+			 switch (type) {
+			 case 1:
+					 img='pinstar.png'
+				 break;
+				case 2:
+							img='pinTappa.png'
+				break;
+			 default:
+					 img='pinhome.png'
+			}
+			var url = 'http://localhost/html-template/images/'+img;
+			return url;
+		 }
 
-		 function addMarker(map,label,lat,lng) {
+
+		 function addMarker(map,label,lat,lng, type) {
+			 var img = pinMarker(type);
 
 			 var marker = new google.maps.Marker({
 					 position: {lat: lat, lng: lng},
 					 map: map,
 					 label: {text:label, color:'white'},
-					 icon: 'http://localhost/html-template/images/pinhome.png',
+					 icon: img,
 					 clickable: true
 				 });
 				 var infowindow = new google.maps.InfoWindow({
@@ -231,12 +249,14 @@ var lngDefault = 10.991621500000065;
 
 
 		 }
-		 function addMarkerNoLabel(map,lat,lng) {
+		 function addMarkerNoLabel(map,lat,lng, type) {
+
+			 var img = pinMarker(type);
 
 			var marker = new google.maps.Marker({
 					position: {lat: lat, lng: lng},
 					map: map,
-					icon: 'http://localhost/html-template/images/pinhome.png',
+					icon: img,
 					clickable: true
 				});
 				var infowindow = new google.maps.InfoWindow({
@@ -270,13 +290,13 @@ var lngDefault = 10.991621500000065;
 
 
 																	//test
-																	 addMarkerNoLabel(mapHome,45.43838419999999,10.991621500000065 )
-																	 addMarkerNoLabel(mapHome,44.5,10.99163 )
-																	 addMarkerNoLabel(mapHome,45.42,9.98 )
-																	 addMarkerNoLabel(mapHome,45.5,11 )
-																	 addMarkerNoLabel(mapHome,45.6,10.8 )
-																	 addMarkerNoLabel(mapHome,45.3,12 )
-																	addMarkerNoLabel(mapHome,48,12 )
+																	 addMarkerNoLabel(mapHome,45.43838419999999,10.991621500000065,0)
+																	 addMarkerNoLabel(mapHome,44.5,10.99163,0)
+																	 addMarkerNoLabel(mapHome,45.42,9.98,0)
+																	 addMarkerNoLabel(mapHome,45.5,11,0)
+																	 addMarkerNoLabel(mapHome,45.6,10.8,0)
+																	 addMarkerNoLabel(mapHome,45.3,12,0)
+																	addMarkerNoLabel(mapHome,48,12,0)
 
 																		var bounds = new google.maps.LatLngBounds();
 
@@ -392,14 +412,14 @@ var lngDefault = 10.991621500000065;
 			window.history.pushState({}, window.document.title, "?"+$.param(queryObj));
 		}
 
-
+//******* scheda *******//
 		function initScheda() {
 			$('#commenti #menu2 a').click(campiCommento);
 			//nascondo i campi input
 			$('#commenti #areaInserimento').hide();
 			//filtro commenti
 			$('#commenti #menu1 select').change(filtraCommentiChange);
-			
+
 		}
 
 		function campiCommento(e) {
@@ -408,6 +428,8 @@ var lngDefault = 10.991621500000065;
 		}
 
 		function filtraCommentiChange(e) {
+
+
 			var dd = $(e.target);
 			var scelta = parseInt(dd.val());
 
@@ -415,22 +437,128 @@ var lngDefault = 10.991621500000065;
 			var commentiTappe = $('#commenti .corpo-commento div.tappa').parents('article.corpo-commento');
 			var commentiGenerali = commenti.not(commentiTappe);
 
+
+
 			if(scelta==-1) {
-				commenti.delay(50).fadeIn(200);
+				commenti.delay(200).fadeIn(200);
 			} else if (scelta==0) {
-				commentiTappe.fadeOut(10);
-				commentiGenerali.delay(50).fadeIn(200);
+				commentiTappe.fadeOut(100);
+				commentiGenerali.delay(200).fadeIn(200);
 			} else {
-				commentiGenerali.fadeOut(10);
+				commentiGenerali.fadeOut(100);
+				commentiTappe.fadeOut(100)
 				commentiTappe.each(function() {
 																				if ($(this).children("div.tappa").text()==scelta) {
-																						$(this).delay(50).fadeIn(200);
+																						$(this).delay(200).fadeIn(200);
 																				} else {
-																						$(this).fadeOut(10);
+																						$(this).fadeOut(100);
 																				}
+
 													});
 			}
+}
+
+var directionsDisplay;
+var directionsService;
+
+function initMapScheda() {
+	directionsDisplay = new google.maps.DirectionsRenderer();
+	directionsService = new google.maps.DirectionsService();
+
+	mapHome = new google.maps.Map(document.getElementById('map'), {
+																center: {lat: latDefault, lng: lngDefault},
+																zoom: 12,
+																streetViewControl: false,
+																fullscreenControl: false,
+																mapTypeControl: false
+
+															});
+	//layer bici
+	var bikeLayer = new google.maps.BicyclingLayer();
+  bikeLayer.setMap(mapHome);
+
+	//inserimento pin sponsor
+	addMarker(mapHome,'1',45.43838419999999,10.991621500000065,1);
 
 
 
-		}
+	//inizializzo il percorso
+	directionsDisplay.setMap(mapHome);
+
+	var start = new google.maps.LatLng({lat: 45.435480013105355, lng: 10.980502367019653});
+	var end = new google.maps.LatLng({lat: 45.438521466560076, lng: 10.9962241569519043});
+	var request = {
+		 origin: start,
+		 destination: end,
+		 travelMode: 'DRIVING',
+		 unitSystem: google.maps.UnitSystem.METRIC,
+		 waypoints: [
+								 {
+									 location: new google.maps.LatLng({lat: 45.43273955326644, lng: 10.984225273132324}),
+									 stopover: false
+								 },{
+									 location: new google.maps.LatLng({lat: 45.434900311545114, lng: 10.98756194114685}),
+									 stopover: true
+								 },{
+									 location: new google.maps.LatLng({lat: 45.43685019312067, lng: 10.990909337997437}),
+									 stopover: false
+								 },{
+									 location: new google.maps.LatLng({lat: 45.4359543099525335 , lng: 10.993773937225342}),
+									 stopover: false
+								 },{
+									 location: new google.maps.LatLng({lat: 45.435766097395025, lng: 10.994642972946167}),
+									 stopover: false
+								 }],
+			optimizeWaypoints: false,
+			provideRouteAlternatives: false,
+			avoidHighways: true,
+			avoidTolls: true
+	 };
+
+	 directionsService.route(request, function(result, status) {
+		 //fare uno switch con gli altri status
+	  if (status == 'OK') {
+			directionsDisplay.setOptions( {
+																			suppressMarkers: true,
+																			polylineOptions: {strokeColor: '#ffb839',strokeWeight:'6',strokeOpacity: 0.7, clickable: true}
+
+																			}
+
+																		 );
+      //directionsDisplay.setDirections(result);
+			addMarker(mapHome,'1',45.435480013105355,10.980502367019653,2);
+
+			//test polyline
+			var pol = result.routes[0].overview_polyline
+
+			var flightPath = new google.maps.Polyline({
+          path: google.maps.geometry.encoding.decodePath(pol),
+          geodesic: true,
+          strokeColor: '#ffb839',
+          strokeOpacity: 0.7,
+          strokeWeight: 7
+        });
+
+        flightPath.setMap(mapHome);
+
+				flightPath.addListener("click", function() {alert("click su poliline")})
+
+				//var bounds = new google.maps.LatLngBounds();
+
+				//bounds.extend(flightPath.getPath());
+				//mapHome.fitBounds(bounds);
+
+				//alert(flightPath.getPath())
+
+    }
+
+
+		//result.routes[0].overview_path -> da usare per caricare fontanelle, bar e ristoranti
+		//result.routes[0].legs[0].distance.value -> calcolare la distanza dei vari segmenti
+
+  });
+
+}
+
+
+//  map = new google.maps.Map(document.getElementById('map'), mapOptions);
